@@ -1922,6 +1922,7 @@ class PHPMailer {
    * @static
    */
   public static function RFCDate() {
+  	ini_set('date.timezone', 'Europe/Paris');
     $tz = date('Z');
     $tzs = ($tz < 0) ? '-' : '+';
     $tz = abs($tz);
