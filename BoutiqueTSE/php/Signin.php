@@ -2,21 +2,21 @@
 ob_start();
 include("Link.php");
 if($_COOKIE['cookie']!='ok'){
-	include("../html/Signin.html");
+	include("../html/signIn.html");
 if($_GET[out]){
 	setcookie("cookie", "out");
-	echo "<script language=\"javascript\">location.href='Signin.php';</script>";
+	echo "<script language=\"javascript\">location.href='signIn.php';</script>";
 }
-if($_POST[user]!=null){
-	$user_query=mysql_query("SELECT * FROM `UserList` WHERE `uid`= '$_POST[user]'",$link);
+if($_POST[username]!=null){
+	$user_query=mysql_query("SELECT * FROM `UserList` WHERE `username`= '$_POST[username]'",$link);
 	$array_result=mysql_fetch_array($user_query);
- 	if($_POST[user]==$array_result['uid']&&$_POST[mdp]==$array_result['mdp']){
+ 	if($_POST[username]==$array_result['username']&&$_POST[password]==$array_result['password']){
  		if ($_POST[remember]=="on"){
  			setcookie("cookie", "ok",time()+3600*24*7);
- 			echo "<script language=\"javascript\">location.href='./Signin.php';</script>";
+ 			echo "<script language=\"javascript\">location.href='./signIn.php';</script>";
  		}else{
  			setcookie("cookie", "ok");
- 			echo "<script language=\"javascript\">location.href='Signin.php';</script>";			
+ 			echo "<script language=\"javascript\">location.href='signIn.php';</script>";			
  		}
 	}
 }
@@ -26,15 +26,15 @@ function CheckSignin()
 {
 	//定义一个form表单其中名字为signiform 其中的变量名称为user取他的值
 	
-	if (signinform.user.value==""){
+	if (signinform.username.value==""){
 		alert("please fill in your name");
-		signinform.user.focus();
+		signinform.username.focus();
 		return false;		
 	}
 
-	if (signinform.mdp.value==""){
+	if (signinform.password.value==""){
 		alert("password can't be empty");
-		signinform.mdp.focus();
+		signinform.password.focus();
 		return false;		
 	}
 		

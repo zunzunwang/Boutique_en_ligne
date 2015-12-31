@@ -94,7 +94,7 @@
         					<a href="signUP.html">Sign up</a>
         				</li>
         				<li>
-        					<a href="./Signin.html">Sign in</a>
+        					<a href="./signIn.html">Sign in</a>
         				</li>
     		  		</ul>
     			</nav>
@@ -106,13 +106,15 @@
     		</div>
             <!-- 利用onsubmit函数来执行javascript函数 javascript脚本来减少php的压力 提交表单的时候先执行 onsubmit后面的内容 -->
     	  	<div class="col-md-6">
-    	  	<form class="form-signin" action="../php/Signin.php" method="post" name="signinform" onsubmit="return CheckSignin();">
+    	  	<form class="form-signin" action="../php/signIn.php" method="post" name="signinform" onsubmit="return CheckSignin();">
         		<h2 class="form-signin-heading">Please sign in</h2>
-        		<input type="text" name="user" placeholder="NAME.Surname">
-        		<input type="password" name="mdp" placeholder="Password">
+        		<input type="text" name="username" placeholder="NAME.Surname">
+        		<input type="password" name="password" placeholder="Password">
         		<label class="checkbox">
           			<input type="checkbox" name="remember" value="on"> Remember me for a week
        			</label>
+       			<a class="forget" href="../html/reset.html">Forget my password?</a>
+       			<a class="signup" href="../html/signUp.html">Sign up</a>
         		<button id="signin" class="btn btn-primary" type="submit">Sign in</button>
       		</form>
       		</div>

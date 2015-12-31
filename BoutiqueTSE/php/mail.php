@@ -32,6 +32,6 @@ try {
 	$mail->Send();
 	echo "<script>alert('Thanks for your messages, we will respond you soon！');location.href='../html/index.html';</script>";
 } catch (phpmailerException $e) {
-	echo "邮件发送失败：".$e->errorMessage();
+	echo "fail to send your messages, the reason is:".$e->errorMessage();
 }
 ?>
