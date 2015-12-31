@@ -44,6 +44,7 @@ function CheckSignin()
 }else{
 ?>	
 <?php
-include("../html/index.html");
+$url_index="../html/index.html";
+echo "<SCRIPT LANGUAGE=\"JavaScript\">location.href='$url_index'</SCRIPT>";
 }
 ?>

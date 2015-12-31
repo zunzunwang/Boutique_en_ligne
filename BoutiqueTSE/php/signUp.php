@@ -61,6 +61,8 @@ function CheckSignup()
 }else{
 ?>	
 <?php
-include("../html/index.html");
+$url="../html/index.html";
+echo "<SCRIPT LANGUAGE=\"JavaScript\">location.href='$url'</SCRIPT>";
+//include("../html/index.html");
 }
 ?>
