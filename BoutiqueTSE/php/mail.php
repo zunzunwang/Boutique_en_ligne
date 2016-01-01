@@ -5,9 +5,6 @@
 header("content-type:text/html;charset=utf-8");
 ini_set("magic_quotes_runtime",0);
 require 'class.phpmailer.php';
-
-
-
 try {
 	$mail = new PHPMailer(true); 
 	$mail->IsSMTP();
