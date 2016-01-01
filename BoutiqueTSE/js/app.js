@@ -1,6 +1,5 @@
 var boutique = angular.module('Boutique', [
-	'ui.router','ui.bootstrap'
-  // ,'ui.uploader'
+  'ui.router','ui.bootstrap'
 ]);
 
 boutique.config(function($stateProvider, $urlRouterProvider){
@@ -107,7 +106,7 @@ boutique.controller('showHide', ['$scope', function ($scope,Data) {
 // The third controller about changing-over images.
 boutique.controller('imageChanged', ['$scope', function ($scope) {  
     $scope.myInterval = 2000;
-	$scope.noWrapSlides = false;
+	  $scope.noWrapSlides = false;
   	var slides = $scope.slides = [];
   		
   	slides.push({
@@ -122,8 +121,75 @@ boutique.controller('imageChanged', ['$scope', function ($scope) {
   	slides.push({
   		image:'../img/4.jpg'
   	});
-
 }]);
+
+boutique.controller('content',['$scope', function($scope){
+    $scope.allUsersContent = false;
+    $scope.quantityContent = false;
+    $scope.basketContent = false;
+    $scope.publishContent = false;
+    $scope.publishBDEContent = false;
+    $scope.informationContent = false;
+
+    $scope.allUsers = function(){
+      $scope.allUsersContent = true;
+      $scope.publishBDEContent = false;
+      $scope.quantityContent = false;
+    }
+
+    $scope.quantity = function(){
+      $scope.allUsersContent = false;
+      $scope.publishBDEContent = false;
+      $scope.quantityContent = true;
+    }    
+
+    $scope.basket = function(){
+      $scope.basketContent = true;
+      $scope.publishContent = false;
+      $scope.informationContent = false;
+    }
+
+    $scope.publish = function(){
+      $scope.basketContent = false;
+      $scope.publishContent = true;
+      $scope.informationContent = false;
+    }
+
+    $scope.publishBDE = function(){
+      $scope.allUsersContent = false;
+      $scope.publishBDEContent = true;
+      $scope.quantityContent = false;
+    }
+
+    $scope.information = function(){
+      $scope.basketContent = false;
+      $scope.publishContent = false;
+      $scope.informationContent = true;
+    }
+}]);
+
+/*boutique.controller('DropdownCtrl', ['$scope', function ($scope, $log) {
+  $scope.items = [
+    'The first choice!',
+    'And another choice for you.',
+    'but wait! A third!'
+  ];
+
+  $scope.status = {
+    isopen: false
+  };
+
+  $scope.toggled = function(open) {
+    $log.log('Dropdown is now: ', open);
+  };
+
+  $scope.toggleDropdown = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    $scope.status.isopen = !$scope.status.isopen;
+  };
+}]);*/
+
 
 /*//controller of upload.html
 boutique.controller('uploaderCtrl', ['$scope', function($scope, $log, uiUploader) {
