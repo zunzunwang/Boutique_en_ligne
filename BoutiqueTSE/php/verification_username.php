@@ -1,14 +1,14 @@
 <?php
 include("Link.php");
-
-function verification_username($username){
-	 $username_query=mysql_query("SELECT `username` FROM `UserList` WHERE `username`='$username'",$link);
-	 $array_nameresult=mysql_fetch_array($username_query);
-	 print_r($array_nameresult);
-	 if($array_nameresult==null){
-	 	return true;	 	
-	 } else{
-	 	return false;
-	 }	
+//获得来自 URL 的 username 参数
+$username=$_GET['username'];
+$username_query=mysql_query("SELECT `username` FROM `UserList` WHERE `username`='$username'",$link);
+$array_nameresult=mysql_fetch_array($username_query);
+if($array_nameresult==null){
+	$response="This name hasn't been used";	 	
+}else{
+	$response="This name has been used";
 }
+//输出响应	
+echo $response;
 ?>
