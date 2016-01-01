@@ -2,9 +2,9 @@
 ob_start();
 include("Link.php");
 if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
-	$url_signIn="../html/signIn.html";
-	echo "<SCRIPT LANGUAGE=\"JavaScript\">location.href='$url_signIn'</SCRIPT>";
-	//include("../html/signIn.html");
+	//$url_signIn="../html/signIn.html";
+	//echo "<SCRIPT LANGUAGE=\"JavaScript\">location.href='$url_signIn'</SCRIPT>";
+	include("../html/signIn.html");
 if($_GET[out]){
 	setcookie("cookie", "out");
 	echo "<script language=\"javascript\">location.href='signIn.php';</script>";
