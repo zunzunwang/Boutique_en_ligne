@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors','off');
 ob_start();
 include("Link.php");
 if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){

@@ -173,16 +173,19 @@
       }
       
       function verification_confirmpassword(ele){
+          var oBtn = document.getElementById('signup');
           var password = document.getElementById("password").value;
           var confirmPassword = document.getElementById("confirmPassword").value;
           if(password == confirmPassword){
               var insert= document.getElementById("insert_confirmpassword");
               var insertText="<p name=\"verifacation_Password\">your confirm Password is right.</p>";
                   insert.innerHTML=insertText;
+                  oBtn.disabled=false;
                   }else{
                 	  var insert= document.getElementById("insert_confirmpassword");
                 	  var insertText="<p name=\"verifacation_Password\">please reenter the same password in confirm password.</p>";
                 	  insert.innerHTML=insertText;
+                      oBtn.disabled=true ;
                 	  }
           }
       
@@ -190,6 +193,7 @@
        function verification_username(username){
     	  
     	  var xmlhttp;
+          var oBtn = document.getElementById('signup');
     	  if (username.length==0)
     	  { 
     	  document.getElementById("insert_name").innerHTML="";
@@ -208,11 +212,16 @@
     	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
     	    {
     	    document.getElementById("insert_name").innerHTML=xmlhttp.responseText;
+        	if(xmlhttp.responseText=="This name has been used"){
+                oBtn.disabled=true ;
+        	}else{
+        		oBtn.disabled=false;
+        		}     	    
     	    }
     	  }
     	xmlhttp.open("GET","../php/verification_username.php?username="+username,true);
-    	xmlhttp.send();
-    	}      
+    	xmlhttp.send();     
+    	}
     </script>
 	</body>
 </html>
