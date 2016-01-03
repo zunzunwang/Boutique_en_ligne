@@ -1,7 +1,7 @@
 <?php
 ob_start();
 if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
-	$url_signIn="../html/signIn.html";
+	$url_signIn="../php/signIn.php";
 	echo "<SCRIPT LANGUAGE=\"JavaScript\">location.href='$url_signIn'</SCRIPT>";
 }else{//之前要先验证是不是有保存正确的cookie 否则就要退出
 	if($_GET[out]){

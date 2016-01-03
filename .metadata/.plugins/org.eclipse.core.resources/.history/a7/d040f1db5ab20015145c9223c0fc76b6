@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Boutique">
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Boutique en Ligne</title>
+    <script src="../js/angular.js"></script>
+    <script src="../js/angular-ui-bootstrap.js"></script>
+    <script src="../js/angular-ui-route.js"></script>
+    <script src="../js/app.js"></script>
+    <script type="../js/animation.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+
+    <style type="text/css">
+      body {
+        padding: 0px 80px;
+      }
+      #container{
+        background-color: #f5f5f5;
+      }
+      #hide{
+        width: 30px;
+        width: 30px;
+        float: right;
+      }
+      #show{
+        width: 30px;
+        width: 30px;
+        float: right; 
+      }
+      #marque{
+        width: 40%;
+        height: 40%;
+      }
+      #filtre{
+        float: right;
+        width: 25%;
+        margin-top: 3%;
+      }
+
+      #date{
+        text-align: center;
+      }
+      #exhibition{
+        text-align: center;
+        color: red;
+        font-size: 50px;
+      }
+      footer{
+        text-align: center;
+      }
+
+    </style>
+	</head>
+	<body>
+		<header class="navbar navbar-default">
+  			<div class="container">
+    			<div class="navbar-header">
+      				<a href="../php/tse.php" class="navbar-brand">Welcome to the online store of TSE</a>
+    			</div>
+    			<nav id="bs-navbar" class="collapse navbar-collapse">
+      				<ul class="nav navbar-nav">
+        				<li>
+          					<a href="bde.html">Online Store of BDE</a>
+        				</li>
+<!--         				<li>
+          					<a href="">BB</a>
+        				</li>
+        				<li>
+          					<a href="">CC</a>
+       					</li>
+        				<li>
+          					<a href="">DD</a>
+        				</li> -->
+      				</ul>
+      				<ul class="nav navbar-nav navbar-right">
+    		  		  <li>
+                  <a href="monCompte.html">MY_ACCOUNT</a>    
+                </li>
+                <li>
+                  <a href="../html/index.html#contact">CONTACT_US</a>    
+                </li>
+                <li>
+                  <a href="#">LOGOUT</a>    
+                </li>
+              </ul>
+    			</nav>
+  			</div>
+		</header>
+
+
+    <div class="row">
+      <div class="col-md-6">
+        <a href="index.html"><img id="marque" src="../img/marque.png"></a>
+      </div>
+      <div class="col-md-6">
+        <!-- <fieldset id="rechercher">
+              <input type="text" id="search" placeholder="Search" value="" class="placeholder">
+              <button type="submit" id="searchButton" class="btn btn-primary">Search</button>
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </fieldset> -->
+        <select id="filtre">
+          <option value="fi1">--------All--------</option>
+          <option value="fi2">Today</option>
+          <option value="fi3">Within a week</option>
+          <option value="fi3">Within a month</option>
+        </select>
+
+      </div>
+    </div>
+
+    <div id="total"   ng-controller="showHide">
+<!-- ////////////////////////////////////////start of the second control/////////////////////////////////////////// -->
+      <div id="headImg" ng-controller="imageChanged" ng-show="slidesLooping">
+      
+        <div id="imgLoop">
+        
+          <carousel interval="myInterval" no-wrap="noWrapSlides" >
+            <slide ng-repeat="slide in slides" active="slide.active">
+              <img ng-src="{{slide.image}}" style="margin:auto;">
+              <div class="carousel-caption">
+                <p>{{slide.text}}</p>
+              </div>
+            </slide>
+          </carousel>
+
+        </div> 
+    
+      </div>
+
+      <div style='background:{{backgroundColor}}'>
+        <pre id="date">Today is: <em>{{dt | date:'fullDate' }}</em></pre>
+        <img id="hide" type="button" src="../img/hide.png" ng-show="hideImg" ng-click="showEtHide()" />
+        <img id="show" type="button" src="../img/show.png" ng-show="showImg" ng-click="showEtHide()" />
+        <!-- <img id="backgroundColor" type="button" src="img/bg.png" ng-click="backcolor()" ng-dblclick="returnWhite()"/> -->
+        <div><br/></dir>
+      </div>
+      
+
+
+
+      <hr style="border:1px solid black;" />
+    </div>
+
+    <div class="row">
+      
+      <div class="col-md-3">
+        <div class="list-group">
+          <a class="list-group-item active">
+            <h3 class="list-group-item-heading">Item List</h3>
+          </a>
+          <a href="../php/tse.php?type=All" class="list-group-item">
+            <h4>All</h4>
+            <p class="list-group-item-text">...</p>
+          </a>
+           <a href='../php/tse.php?type=Clothes' class="list-group-item">
+            <h4>Clothes</h4>
+            <p class="list-group-item-text">...</p>
+          </a>
+           <a href='../php/tse.php?type=Appliances' class="list-group-item">
+            <h4>Appliances</h4>
+            <p class="list-group-item-text">...</p>
+          </a>
+           <a href='../php/tse.php?type=Furnitures' class="list-group-item">
+            <h4>Furnitures</h4>
+            <p class="list-group-item-text">...</p>
+          </a>
+           <a href='../php/tse.php?type=Residences' class="list-group-item">
+            <h4>Residences</h4>
+            <p class="list-group-item-text">...</p>
+          </a>
+        
+      </div>
+    </div>
+
+      <div class="col-md-9">
+        <div class="row">
+          <div id="produit1" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img src="http://placehold.it/320x150" alt="">
+              <div class="caption">
+                <h4 id="produit1_price" class="pull-right"></h4>
+                <h4><a id="produit1_name" href="#"></a></h4>
+                <p id = "produit1_description"></p>
+                <p id = "produit1_upload_username"></p>
+                <p id = "produit1_upload_date"></p>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit2" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img src="http://placehold.it/320x150" alt="">
+              <div class="caption">
+                <h4 id="produit2_price" class="pull-right"></h4>
+                <h4><a id="produit2_name" href="#"></a></h4>
+                <p id = "produit2_description"></p>
+                <p id = "produit2_upload_username"></p>
+                <p id = "produit2_upload_date"></p>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit3" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img src="http://placehold.it/320x150" alt="">
+              <div class="caption">
+                <h4 id="produit3_price" class="pull-right"></h4>
+                <h4><a id="produit3_name" href="#"></a></h4>
+                <p id = "produit3_description"></p>
+                <p id = "produit3_upload_username"></p>
+                <p id = "produit3_upload_date"></p>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit4" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img src="http://placehold.it/320x150" alt="">
+              <div class="caption">
+                <h4 id="produit4_price" class="pull-right"></h4>
+                <h4><a id="produit4_name" href="#"></a></h4>
+                <p id = "produit4_description"></p>
+                <p id = "produit4_upload_username"></p>
+                <p id = "produit4_upload_date"></p>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit5" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img src="http://placehold.it/320x150" alt="">
+              <div class="caption">
+                <h4 id="produit5_price" class="pull-right"></h4>
+                <h4><a id="produit5_name" href="#"></a></h4>
+                <p id = "produit5_description"></p>
+                <p id = "produit5_upload_username"></p>
+                <p id = "produit5_upload_date"></p>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit6" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img src="http://placehold.it/320x150" alt="">
+              <div class="caption">
+                <h4 id="produit6_price" class="pull-right"></h4>
+                <h4><a id="produit6_name" href="#"></a></h4>
+                <p id = "produit6_description"></p>
+                <p id = "produit6_upload_username"></p>
+                <p id = "produit6_upload_date"></p>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit7" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img src="http://placehold.it/320x150" alt="">
+              <div class="caption">
+                <h4 id="produit7_price" class="pull-right"></h4>
+                <h4><a id="produit7_name" href="#"></a></h4>
+                <p id = "produit7_description"></p>
+                <p id = "produit7_upload_username"></p>
+                <p id = "produit7_upload_date"></p>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit8" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img src="http://placehold.it/320x150" alt="">
+              <div class="caption">
+                <h4 id="produit8_price" class="pull-right"></h4>
+                <h4><a id="produit8_name" href="#"></a></h4>
+                <p id = "produit8_description"></p>
+                <p id = "produit8_upload_username"></p>
+                <p id = "produit8_upload_date"></p>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit9" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img src="http://placehold.it/320x150" alt="">
+              <div class="caption">
+                <h4 id="produit9_price" class="pull-right"></h4>
+                <h4><a id="produit9_name" href="#"></a></h4>
+                <p id = "produit9_description"></p>
+                <p id = "produit9_upload_username"></p>
+                <p id = "produit9_upload_date"></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+<!--       
+      <div class="col-md-3" id="exhibition">
+        <div id="html_1">
+          <iframe align="center" width="950" height="500" src="module1.html" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+          <iframe align="center" width="950" height="500" src="module1.html" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </div>
+      </div>
+
+
+      <div class="col-md-3" id="exhibition">
+        <div id="html_2">
+          <iframe align="center" width="950" height="500" src="module1.html" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+          <iframe align="center" width="950" height="500" src="module1.html" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </div>
+      </div>
+      
+      <div class="col-md-3" id="exhibition">
+        <div id="html_3">
+          <iframe align="center" width="950" height="500" src="module1.html" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+          <iframe align="center" width="950" height="500" src="module1.html" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </div>
+      </div> -->
+
+    </div>
+
+    <nav>
+      <div id = "pager_records"></div>
+      <div id = "pager_select"></div>
+    </nav>
+
+
+    <hr style="border:1px solid black;" />
+    
+    <footer>
+      <div>      
+        <span>copyright &copy;2016 <b><a href="http://www.telecom-st-etienne.fr/">TELECOM SAINT-ETIENNE</a></b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All rights reserved.</span>
+      </div>
+    </footer>
+
+	</body>
+</html>
