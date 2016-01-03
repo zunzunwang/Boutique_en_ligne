@@ -23,6 +23,29 @@
 // 	default:echo "ssss";
 	
 // }
-phpinfo();
+//phpinfo();
+
+$test = 10;
+echo $test;
+?>
+
+<SCRIPT language = javascript>
+function CheckSignin()
+{
+var test =<?php echo $test;?>;
+alert(test);
+		
+}
+</SCRIPT>
+<?php
+
+
+echo "<SCRIPT>CheckSignin();</SCRIPT>";
 
 ?>
+
+
+
+
+
+
