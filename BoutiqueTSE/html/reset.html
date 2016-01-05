@@ -15,7 +15,7 @@
           .form-reset {
             max-width: 400px;
             padding: 19px 29px 29px;
-            margin: 0 auto 20px;
+            margin: 120px auto 20px;/*第一个变量是用来改离上面的间距的*/
             background-color: #fff;
             border: 1px solid #e5e5e5;
             -webkit-border-radius: 5px;
@@ -104,7 +104,7 @@
         <h2 class="form-reset-heading">Please reset your password</h2>
         <input id="name" type="text" name="username" placeholder="Name" onblur="verification_reset_username(this.value)">
         <p id="insert_name"></p>
-        <select id="question" name="question">
+        <select id="question" name="question" class="form-control">
           <option value="question1">What is your mother's name?</option>
           <option value="question2">When is your father's birthday?</option>
           <option value="question3">Where is your birth place?</option>

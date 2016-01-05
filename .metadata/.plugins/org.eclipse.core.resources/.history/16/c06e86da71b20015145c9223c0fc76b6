@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Boutique">
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Boutique en Ligne</title>
+    <script src="../js/angular.js"></script>
+    <script src="../js/angular-ui-bootstrap.js"></script>
+    <script src="../js/angular-ui-route.js"></script>
+    <script src="../js/app.js"></script>
+    <script type="../js/animation.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+
+    <style type="text/css">
+      body {
+        padding: 0px 80px;
+      }
+      #container{
+        background-color: #f5f5f5;
+      }
+      #marque{
+        width: 40%;
+        height: 40%;
+      }
+      footer{
+        text-align: center;
+      }
+      .form-myAccount {
+        max-width: 700px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-myAccount .form-myAccount-heading,
+      .form-myAccount{
+        margin-bottom: 10px;
+      }
+      .form-myAccount input[type="text"],
+      .form-myAccount input[type="password"],
+      .form-myAccount select {
+        /*font-size: 30px;
+        margin-bottom: 15px;*/
+        width: 100%;
+        height: 15%;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+      label{
+        padding-left: 20px;
+      }
+
+      button{
+        width: 100%;
+      }
+ 
+
+    </style>
+
+	</head>
+
+	<body ng-controller="content">
+		<header class="navbar navbar-default">
+  			<div class="container">
+          <div class="navbar-header">
+              <p id="label_username" class="navbar-brand">Welcome</p>
+          </div>
+    			<nav id="bs-navbar" class="collapse navbar-collapse">
+      				<ul class="nav navbar-nav">
+        				<li>
+          					<a href="tse.html">Online Store of TSE</a>
+        				</li>
+                <li>
+                    <a href="bde.html">Online Store of BDE</a>
+                </li>
+      				</ul>
+      				<ul class="nav navbar-nav navbar-right">
+                <li>
+                  <a href="#">LOGOUT</a>    
+                </li>
+              </ul>
+    			</nav>
+  			</div>
+		</header>
+
+
+    <div class="row">
+      <div class="col-md-6">
+        <a href="index.html"><img id="marque" src="../img/marque.png"></a>
+      </div>
+      <div class="col-md-6">
+      </div>
+    </div>
+
+    <div class="row">
+      
+      <div class="col-md-3">
+        <div class="list-group">
+          <a class="list-group-item active">
+            <h3 class="list-group-item-heading">Item List</h3>
+          </a>
+          <a href="#" class="list-group-item" ng-click="basket()">
+            <h4>Basket</h4>
+          </a>
+          <a href="#" class="list-group-item" ng-click="publish()">
+            <h4>Release new products</h4>
+          </a>
+          <a href="#" class="list-group-item" ng-click="information()">
+            <h4>Personal Information</h4>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <!-- 显示 -->
+        <div ng-show="basketContent">
+          <span>这里显示你买卖过的东西</span>
+        </div>
+        
+        <div ng-show="publishContent">
+          <!-- <span>这里是发布界面</span> -->
+          <div>
+            <form class="form-myAccount">
+              <input type="text" placeholder="Name">
+              <input type="text" placeholder="Price">
+              <select class="form-control">
+                <option>Clothes</option>
+                <option>Appliance</option>
+                <option>Furniture</option>
+                <option>Residence</option>
+              </select>
+              <textarea rows="5" cols="88" placeholder="The description of your produit..."></textarea>
+              <div>
+                <div style="float:right;">
+                  <button ng-click="btn_upload()">Upload</button>
+                  <button ng-click="btn_clean()">Remove all</button>
+                </div>
+                <input type="file" id="file1" multiple/>
+              </div>
+
+              <button id="upload" class="btn btn-primary" type="submit">Publish</button>
+          
+            </form>
+ 
+          </div>
+ 
+        </div>
+        
+        <div ng-show="informationContent">
+          <span>这里是个人信息主页</span>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+    <hr style="border:1px solid black;" />
+    
+    <footer>
+      <div>      
+        <span>copyright &copy;2016 <b><a href="http://www.telecom-st-etienne.fr/">TELECOM SAINT-ETIENNE</a></b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All rights reserved.</span>
+      </div>
+    </footer>
+
+	</body>
+</html>
