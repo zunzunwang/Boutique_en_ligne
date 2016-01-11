@@ -15,7 +15,7 @@
           .form-reset {
             max-width: 400px;
             padding: 19px 29px 29px;
-            margin: 120px auto 20px;/*第一个变量是用来改离上面的间距的*/
+            margin: 10% auto 20px;/*第一个变量是用来改离上面的间距的*/
             background-color: #fff;
             border: 1px solid #e5e5e5;
             -webkit-border-radius: 5px;
@@ -67,11 +67,14 @@
     <body background="../img/back.jpg">
 
 <!--      <header class="navbar navbar-default">  -->
-        <div class="labelHead">
-                  <a href="../php/signUp.php">Sign up</a>
-                  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                  <a href="../php/signIn.php">Sign in</a>
-        </div>
+      <nav id="bs-navbar" class="headNav">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="../php/signIn.php">Sign in</a>
+            <a href="../php/signUp.php">Sign Up</a>
+          </li>
+        </ul>
+      </nav>
 <!--     </header>
  -->
 
