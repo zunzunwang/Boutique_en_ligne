@@ -12,6 +12,23 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	header("content-type:text/html;charset=utf-8");
 	include("Link.php");
 	include("../html/tse.html");
+	/**
+	 * gestion_admin
+	 */
+	if($_COOKIE['cookie']=="admin"){
+		//$gestioin_admin="<a class=\"page-scroll\" href=\"../php/admin.php\">admin</a>";
+		$gestioin_admin="<a>ADMIN</a>";
+		echo "<script language=\"javascript\">document.getElementById(\"gestion_admin\").innerHTML=\"$gestioin_admin\";</script>";
+		?>
+				<SCRIPT language = javascript>
+				function gestion_admin(){
+				$('#gestion_admin > a').attr('class',"page-scroll");
+				$('#gestion_admin > a').attr('href',"../php/admin.php");
+				}		
+				</SCRIPT>
+			<?php
+				echo "<script language=\"javascript\">gestion_admin();</script>";
+			}
 	/***
 	 * 类型函数
 	 */

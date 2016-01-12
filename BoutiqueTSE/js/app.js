@@ -2,57 +2,7 @@ var boutique = angular.module('Boutique', [
   'ui.router','ui.bootstrap'
 ]);
 
-boutique.config(function($stateProvider, $urlRouterProvider){
-	$urlRouterProvider.otherwise('/index_1.html');
-	$stateProvider
-		.state('index_1',{
-			url:'/index_1',
-/*			views:{
-				'':{
-					templateUrl:'html/index_1.html'
-				},
-			}*/
-			templateUrl: 'html/index_1.html',
-		})
-		.state('bde',{
-			url:'/bde',
-			templateUrl: 'html/bde.html',
-		})
-		.state('tse',{
-			url:'/tse',
-			templateUrl: 'html/tse.html',
-		})
-});
 
-//controller of index_1.html
-boutique.controller('machoice',['$scope',function($scope,Data){
-
-	$scope.bdelogoSmall = true;
-	$scope.tselogoSmall = true;
-	$scope.bdelogoLarge = false;
-	$scope.tselogoLarge = false;
-
-	$scope.showEtHideBDE = function(){  
-		$scope.bdelogoSmall = !$scope.bdelogoSmall;
-		$scope.bdelogoLarge = !$scope.bdelogoLarge;
-	};
-
-	$scope.showEtHideTSE = function(){
-		$scope.tselogoSmall = !$scope.tselogoSmall;
-		$scope.tselogoLarge = !$scope.tselogoLarge;
-	};
-
-	$scope.refreshBDE = function(){
-		// window.open("bde.html");
-		window.location = "bde.html"; 
-	}
-
-	$scope.refreshTSE = function(){
-		// window.open("tse.html");  
-		window.location = "tse.html";
-	}
-
-}]);
 
 //controller of bde.html and tse.html
 boutique.controller('showHide', ['$scope', function ($scope,Data) {
@@ -67,11 +17,27 @@ boutique.controller('showHide', ['$scope', function ($scope,Data) {
 	$scope.returnToday();
 
 
-  $scope.showEtHide = function(){  
+//   $scope.showEtHide = function(){  
+//     // $scope.slidesLooping = !$scope.slidesLooping;
+//     $scope.hideImg = !$scope.hideImg;
+//     $scope.showImg = !$scope.showImg;
+// //    $scope.slidesLooping = !$scope.slidesLooping;
+//     $("#headImg").toggle(1000);
+
+//   }
+  $scope.hide = function(){  
     // $scope.slidesLooping = !$scope.slidesLooping;
     $scope.hideImg = !$scope.hideImg;
     $scope.showImg = !$scope.showImg;
-    $scope.slidesLooping = !$scope.slidesLooping;
+//    $scope.slidesLooping = !$scope.slidesLooping;
+    $("#headImg").slideUp(1000);
+  }
+  $scope.show = function(){  
+    // $scope.slidesLooping = !$scope.slidesLooping;
+  $scope.hideImg = !$scope.hideImg;
+  $scope.showImg = !$scope.showImg;
+//    $scope.slidesLooping = !$scope.slidesLooping;
+  $("#headImg").slideDown(1000);
   }
 
   // var timesDoubleClick = 0;

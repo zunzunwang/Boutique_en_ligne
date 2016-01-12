@@ -88,6 +88,9 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                <li id="gestion_admin">
+         
+                </li>
                 <li>
                   <a href="../php/myAccount.php">MY_ACCOUNT</a>    
                 </li>
@@ -146,8 +149,8 @@
 
       <div id="annexe" style='background:{{backgroundColor}}'>
         <pre id="date">Today is: <em>{{dt | date:'fullDate' }}</em></pre>
-        <img id="hide" type="button" src="../img/hide.png" ng-show="hideImg" ng-click="showEtHide()" />
-        <img id="show" type="button" src="../img/show.png" ng-show="showImg" ng-click="showEtHide()" />
+        <img id="hide" type="button" src="../img/hide.png" ng-show="hideImg" ng-click="hide()" />
+        <img id="show" type="button" src="../img/show.png" ng-show="showImg" ng-click="show()" />
         <!-- <img id="backgroundColor" type="button" src="img/bg.png" ng-click="backcolor()" ng-dblclick="returnWhite()"/> -->
         <br/>
       </div>
