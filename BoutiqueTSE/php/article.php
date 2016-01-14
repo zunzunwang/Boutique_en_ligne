@@ -33,7 +33,45 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	$label_username="Welcome: ".$username;
 	echo "<script language=\"javascript\">document.getElementById(\"label_username\").innerHTML=\"$label_username\";</script>";
 	
+	/**
+	 * 获取当前使用的数据库表格
+	 * @param string $url
+	 */
+	function _PAGELIST($url = '') {
+	
+		global $list,$_SERVER,$produit_id;
+	
+		if($_GET[from_list]){//先要获得当前发送的page的值否则一直都为第一页
+			$list=$_GET[from_list];
+		}
+		if (!$list){//如果没有规定page则限定到第一页
+			$url_index="../php/index.php";
+			echo "<SCRIPT LANGUAGE=\"JavaScript\">location.href='$url_index'</SCRIPT>";
+		}
+		if($list=='bde')
+			$list='Bde_produit_list';
+		else 
+			$list='Tse_produit_list';
 		
+		if($_GET[articleId]){//先要获得当前发送的page的值否则一直都为第一页
+			$produit_id=$_GET[articleId];
+		}
+		if (!$produit_id){//如果没有规定page则限定到第一页
+			$url_index="../php/index.php";
+			echo "<SCRIPT LANGUAGE=\"JavaScript\">location.href='$url_index'</SCRIPT>";
+		}
+	}
+	
+	/**
+	 * 页面处理入口
+	 */
+	_PAGELIST();//get list
+	$result=mysql_query("SELECT * FROM `$list` WHERE `id`= $produit_id;");
+	$row=mysql_fetch_array($result);	
+	echo "<script language=\"javascript\">document.getElementById(\"produit_name\").innerHTML=\"$row[name]\";</script>";
+	echo "<script language=\"javascript\">document.getElementById(\"produit_price\").innerHTML=\"Price: $row[price]€\";</script>";
+	
+	
 
 }
 ?>

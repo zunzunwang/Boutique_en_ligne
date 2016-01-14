@@ -120,13 +120,13 @@
             <img src="http://placehold.it/300x400" alt="">
           </div>
           <div class="col-md-6">
-            <h2>这里是商品名称</h2>
+            <h2 id="produit_name">这里是商品名称</h2>
             <h6><br /></h6>
-            <h4>Price: 这是价格</h4>
+            <h4 id="produit_price">Price: 这是价格</h4>
             <h6><br /></h6>
             <h4>
             	Size:&nbsp;&nbsp;&nbsp;
-            	<div class="btn-group" data-toggle="buttons">
+            	<div id="produit_size" class="btn-group" data-toggle="buttons">
   					   	<label class="btn btn-default active">
     							<input type="radio" name="size" id="size1" autocomplete="off" checked> S
 	  						</label>
@@ -147,7 +147,7 @@
 					  <h6><br /></h6>
             <h4>
             	Color:&nbsp;&nbsp;
-            	<div class="btn-group" data-toggle="buttons">
+            	<div id="produit_color" class="btn-group" data-toggle="buttons">
   							<label class="btn btn-default active">
     							<input type="radio" name="color" id="color1" autocomplete="off" checked> Black
   							</label>
@@ -162,13 +162,16 @@
 					  <h6><br /></h6>
             <h4>
             	Quantity: 
-						  <select>
-							  <option value="">1</option>
-							  <option value="">2</option>
-							  <option value="">3</option>
-							  <option value="">4</option>
-							  <option value="">5</option>
+						  <select id="quantity" onclick="own_quantity()" >
+							  <option value="1">1</option>
+							  <option value="2">2</option>
+							  <option value="3">3</option>
+							  <option value="4">4</option>
+							  <option value="5">5</option>
+							  <option value="other">other</option>							  
 						  </select>
+						  <div id="own_quantity">
+						  </div>
             </h4>
 
             <h6><br /></h6>
@@ -197,6 +200,25 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.js"></script>
+    
+    <script>
+    function own_quantity(){
+    	var quantity=document.getElementById("quantity").value;
+    	if(quantity=="other"){
+    		var insert=document.getElementById("own_quantity");
+    		var insertText="<input name=\"value_own_quality\"> (enter your quantity)</input>";    		
+    		insert.innerHTML=insertText;
+    	}else{
+    		var insert=document.getElementById("own_quantity");
+    		var insertText="";    		
+    		insert.innerHTML=insertText;
+    		
+    	}
+    		
+    }
+    </script>
+    
+    
 
 	</body>
 </html>
