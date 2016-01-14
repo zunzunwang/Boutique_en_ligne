@@ -8,12 +8,17 @@ require 'class.phpmailer.php';
 try {
 	$mail = new PHPMailer(true); 
 	$mail->IsSMTP();
+
 	$mail->CharSet='UTF-8'; //设置邮件的字符编码，这很重要，不然中文乱码
 	$mail->SMTPAuth   = true;                  //开启认证
-	$mail->Port       = 25;                    
+	$mail->Port       = 25;
+	
 	$mail->Host       = "smtp.sina.com"; 
+
 	$mail->Username   = "boutique_tse@sina.com";  //发送邮箱  
 	$mail->Password   = "boutique_tse";  //发送邮箱密码
+
+
 	//$mail->IsSendmail(); //如果没有sendmail组件就注释掉，否则出现“Could  not execute: /var/qmail/bin/sendmail ”的错误提示
 	$mail->AddReplyTo($_POST[email],"reply for your messages to BoutiqueTSE");//回复地址
 	$mail->From       = "boutique_tse@sina.com";

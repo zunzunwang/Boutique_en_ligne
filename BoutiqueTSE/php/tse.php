@@ -173,6 +173,14 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		 $div_name ="produit$index";
 		 $produit_name=$div_name."_name";
 		 echo "<script language=\"javascript\">document.getElementById(\"$produit_name\").innerHTML=\"$row[name]\";</script>";
+		 ?>
+		 <SCRIPT language = javascript>
+		 function dir_article(){
+			 $('<?php echo "#".$produit_name; ?>').attr('href',"<?php echo "../php/article.php?from_list=tse&articleId=".$row[id]?>");
+			 }		
+		 </SCRIPT>
+		 <?php		 
+		 echo "<script language=\"javascript\">dir_article();</script>";
 		 $produit_price=$div_name."_price";
 		 echo "<script language=\"javascript\">document.getElementById(\"$produit_price\").innerHTML=\"$row[price]€\";</script>";
 		 $produit_description=$div_name."_description";
