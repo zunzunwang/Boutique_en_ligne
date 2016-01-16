@@ -367,26 +367,7 @@
 	</script>
 	<script>	
 	function produit_delete(produit_order_id){
-  	  var xmlhttp;
-	  if (window.XMLHttpRequest)
-	  {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	  }
-	  else
-	  {// code for IE6, IE5
-	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	  xmlhttp.onreadystatechange=function()
-	  {
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	    {
-		  alert("you have deleted your order.");
-
-		  location.href='../php/myAccount.php';   	    
-	    }
-	  }
-	xmlhttp.open("GET","../php/delete_order.php?produit_order_id="+produit_order_id,true);
-	xmlhttp.send(); 
+		alert(produit_order_id);			
 	}
 	</script>
     

@@ -188,10 +188,11 @@
           </div>
           <div class="row">
             <div class="col-md-10  col-md-offset-1">
-
-                <button class="btn btn-primary" type="submit">Buy now!</button>
-  				<br /><br />
+              <div id="buy" class="btn-toolbar pull-right" role="toolbar">
+                <div class="btn-group" role="group"><button class="btn btn-primary" type="submit">Buy now!</button></div>
+  				<h4><br /></h4>
   				<a href="../php/index.php#contact">Contact us for more information?</a>         
+              </div>
             </div>
           </div>
         

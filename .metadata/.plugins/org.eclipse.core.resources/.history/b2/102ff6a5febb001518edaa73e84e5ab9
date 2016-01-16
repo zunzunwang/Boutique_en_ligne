@@ -380,7 +380,7 @@
 	  {
 	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 	    {
-		  alert("you have deleted your order.");
+		  alert(you have deleted your order.);
 
 		  location.href='../php/myAccount.php';   	    
 	    }

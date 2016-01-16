@@ -380,13 +380,17 @@
 	  {
 	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 	    {
-		  alert("you have deleted your order.");
-
-		  location.href='../php/myAccount.php';   	    
+	    document.getElementById("insert_name").innerHTML=xmlhttp.responseText;
+    	if(xmlhttp.responseText=="This name has been used"){
+            oBtn.disabled=true ;
+    	}else{
+    		oBtn.disabled=false;
+    		}     	    
 	    }
 	  }
-	xmlhttp.open("GET","../php/delete_order.php?produit_order_id="+produit_order_id,true);
+	xmlhttp.open("GET","../php/verification_username.php?username="+username,true);
 	xmlhttp.send(); 
+		alert(produit_order_id);			
 	}
 	</script>
     

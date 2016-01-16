@@ -190,7 +190,7 @@
             <div class="col-md-10  col-md-offset-1">
 
                 <button class="btn btn-primary" type="submit">Buy now!</button>
-  				<br /><br />
+  				<h4><br /></h4>
   				<a href="../php/index.php#contact">Contact us for more information?</a>         
             </div>
           </div>
