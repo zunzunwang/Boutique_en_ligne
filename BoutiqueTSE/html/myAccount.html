@@ -9,6 +9,8 @@
     <script src="../js/angular-ui-route.js"></script>
     <script src="../js/app.js"></script>
     <script type="../js/animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+    
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 
     <style type="text/css">
@@ -61,51 +63,37 @@
       textarea{
         width: 100%;
       }
-
-/*      button{
-        width: 100%;
-      }*/
- 
-
+      
+      p{
+		word-break: break-all;
+	  }
+	  h4{
+	  	white-space: nowrap;
+	  }
+	        
+      @media (min-width: 767px) and (max-width: 1150px){
+      	.nameProduit{
+	  	  width: 80%;
+  		  white-space: nowrap;
+  		  overflow: hidden; 
+  		  text-overflow: ellipsis;
+	    }
+      
+      }
+      
+	  
     </style>
 
 	</head>
 
 	<body ng-controller="content">
-<!-- 		<header class="navbar navbar-default">
-  			<div class="container">
-          <div class="navbar-header">
-              <p id="label_username" class="navbar-brand"></p>
-          </div>
-    			<nav id="bs-navbar" class="collapse navbar-collapse">
-      				<ul class="nav navbar-nav">
-        				<li>
-          					<a href="../php/tse.php">Online Store of TSE</a>
-        				</li>
-                <li>
-                    <a href="../php/bde.php">Online Store of BDE</a>
-                </li>
-      				</ul>
-      				<ul class="nav navbar-nav navbar-right">
-                <li>
-                  <a href="?out=out">LOGOUT</a>    
-                </li>
-              </ul>
-    			</nav>
-  			</div>
-		</header> -->
+
     <header>
       <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <p id="label_username" class="navbar-brand"></p>
+                <a id="label_username" class="navbar-brand"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -118,6 +106,15 @@
                 </li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
+                <li id="gestion_admin">
+         
+                </li>
+                <li>
+                  <a href="../php/myAccount.php">MY_ACCOUNT</a>    
+                </li>
+                <li>
+                  <a href="../php/index.php#contact">CONTACT_US</a>    
+                </li>
                 <li>
                   <a href="?out=out">LOGOUT</a>    
                 </li>
@@ -159,7 +156,146 @@
       <div class="col-md-9">
         <!-- 显示 -->
         <div ng-show="basketContent">
-          <span>这里显示你买卖过的东西</span>
+        	<div class="row">
+	          <div id="produit1" class="col-sm-4 col-lg-4 col-md-4">
+	            <div class="thumbnail">
+	              <img src="http://placehold.it/320x150" alt=""/>
+	              <div class="caption">
+	                <h4 id="produit1_price"></h4>
+	                <h4 class="nameProduit"><a id="produit1_name" href="#"></a></h4>
+	                <h5 id="produit1_quantity"></h5>	                
+	                <p id = "produit1_description"></p>
+	                <h6 id = "produit1_order_date"></h6>
+	                <h6 id = "produit1_order_id"></h6>	                
+	                <div id = "produit1_delete" class="btn-group" role="group"></div>
+	              </div>
+	            </div>
+	          </div>
+
+	          <div id="produit2" class="col-sm-4 col-lg-4 col-md-4">
+	            <div class="thumbnail">
+	              <img src="http://placehold.it/320x150" alt=""/>
+	              <div class="caption">
+	                <h4 id="produit2_price"></h4>
+	                <h4  class="nameProduit"><a id="produit2_name" href="#"></a></h4>
+	                <h5 id="produit2_quantity"></h5>	               
+	                <p id = "produit2_description"></p>
+	                <h6 id = "produit2_order_date"></h6>
+	                <h6 id = "produit2_order_id"></h6>	                
+	                <div id = "produit2_delete" class="btn-group" role="group"></div>
+	              </div>
+	            </div>
+	          </div>
+	
+	          <div id="produit3" class="col-sm-4 col-lg-4 col-md-4">
+	            <div class="thumbnail">
+	              <img src="http://placehold.it/320x150" alt=""/>
+	              <div class="caption">
+	                <h4 id="produit3_price"></h4>
+	                <h4  class="nameProduit"><a id="produit3_name" href="#"></a></h4>
+	                <h5 id="produit3_quantity"></h5>
+	                <p id = "produit3_description"></p>
+	                <h6 id = "produit3_order_date"></h6>
+	                <h6 id = "produit3_order_id"></h6>
+	                <div id = "produit3_delete" class="btn-group" role="group"></div>
+	              </div>
+	            </div>
+	          </div>
+	 
+	          <div id="produit4" class="col-sm-4 col-lg-4 col-md-4">
+	            <div class="thumbnail">
+	              <img src="http://placehold.it/320x150" alt=""/>
+	              <div class="caption">
+	                <h4 id="produit4_price"></h4>
+	                <h4  class="nameProduit"><a id="produit4_name" href="#"></a></h4>
+	                <h5 id="produit4_quantity"></h5>
+	                <p id = "produit4_description"></p>
+	                <h6 id = "produit4_order_date"></h6>
+	                <h6 id = "produit4_order_id"></h6>
+	                <div id = "produit4_delete" class="btn-group" role="group"></div>
+	              </div>
+	            </div>
+	          </div>
+	
+	          <div id="produit5" class="col-sm-4 col-lg-4 col-md-4">
+	            <div class="thumbnail">
+	              <img src="http://placehold.it/320x150" alt=""/>
+	              <div class="caption">
+	                <h4 id="produit5_price"></h4>
+	                <h4  class="nameProduit"><a id="produit5_name" href="#"></a></h4>
+	                <h5 id="produit5_quantity"></h5>
+	                <p id = "produit5_description"></p>
+	                <h6 id = "produit5_order_date"></h6>
+	                <h6 id = "produit5_order_id"></h6>
+	                <div id = "produit5_delete" class="btn-group" role="group"></div>
+	              </div>
+	            </div>
+	          </div>
+	          
+	          <div id="produit6" class="col-sm-4 col-lg-4 col-md-4">
+	            <div class="thumbnail">
+	              <img src="http://placehold.it/320x150" alt=""/>
+	              <div class="caption">
+	                <h4 id="produit6_price"></h4>
+	                <h4  class="nameProduit"><a id="produit6_name" href="#"></a></h4>
+	                <h5 id="produit6_quantity"></h5>
+	                <p id = "produit6_description"></p>
+	                <h6 id = "produit6_order_date"></h6>
+	                <h6 id = "produit6_order_id"></h6>
+	                <div id = "produit6_delete" class="btn-group" role="group"></div>
+	              </div>
+	            </div>
+	          </div>
+	          
+	          <div id="produit7" class="col-sm-4 col-lg-4 col-md-4">
+	            <div class="thumbnail">
+	              <img src="http://placehold.it/320x150" alt=""/>
+	              <div class="caption">
+	                <h4 id="produit7_price"></h4>
+	                <h4  class="nameProduit"><a id="produit7_name" href="#"></a></h4>
+	                <h5 id="produit7_quantity"></h5>
+	                <p id = "produit7_description"></p>
+	                <h6 id = "produit7_order_date"></h6>
+	                <h6 id = "produit7_order_id"></h6>
+					<div id = "produit7_delete" class="btn-group" role="group"></div>
+				   </div>
+	            </div>
+	          </div>
+	          
+	          <div id="produit8" class="col-sm-4 col-lg-4 col-md-4">
+	            <div class="thumbnail">
+	              <img src="http://placehold.it/320x150" alt=""/>
+	              <div class="caption">
+	                <h4 id="produit8_price"></h4>
+	                <h4  class="nameProduit"><a id="produit8_name" href="#"></a></h4>
+	                <h5 id="produit8_quantity"></h5>
+	                <p id = "produit8_description"></p>
+	                <h6 id = "produit8_order_date"></h6>
+	                <h6 id = "produit8_order_id"></h6>
+					<div id = "produit8_delete" class="btn-group" role="group"></div>
+					</div>
+	            </div>
+	          </div>
+	
+	          <div id="produit9" class="col-sm-4 col-lg-4 col-md-4">
+	            <div class="thumbnail">
+	              <img src="http://placehold.it/320x150" alt=""/>
+	              <div class="caption">
+	                <h4 id="produit9_price"></h4>
+	                <h4  class="nameProduit"><a id="produit9_name" href="#"></a></h4>
+	                <h5 id="produit9_quantity"></h5>
+	                <p id = "produit9_description"></p>
+	                <h6 id = "produit9_order_date"></h6>
+	                <h6 id = "produit9_order_id"></h6>
+	                <div id = "produit9_delete" class="btn-group" role="group"></div>
+	              </div>
+	            </div>
+	          </div>
+        	</div>
+		    <nav>
+		      <div id = "pager_records"></div>
+		      <div id = "pager_select"></div>
+		    </nav>
         </div>
         
         <div ng-show="publishContent">
@@ -209,6 +345,33 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.js"></script>
+    <script>
+    $(document).ready(function(){
+    	//限制字符个数
+    	$("p").each(function(){
+    		var maxwidth=50;
+	       	if($(this).text().length>maxwidth){
+	           	$(this).text($(this).text().substring(0,maxwidth));
+	           	$(this).html($(this).html()+'...');
+	       	}
+	       	else if($(this).text().length<maxwidth){
+	       		var n = maxwidth+20-$(this).text().length;
+	       		var espaces= '';
+	       		for(var i=0;i<n;i++){
+	       			espaces += '&nbsp';
+	       		}
+	       		$(this).html($(this).html()+espaces);
+	       	}
+	   	});
+		});
+	</script>
+	<script>	
+	function produit_delete(produit_order_id){
+		alert(produit_order_id);			
+	}
+	</script>
+    
+
 
 	</body>
 </html>

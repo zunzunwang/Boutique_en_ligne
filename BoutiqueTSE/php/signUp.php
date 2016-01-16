@@ -11,7 +11,6 @@ if($_GET[out]){
 	setcookie("cookie", "out");
 	echo "<script language=\"javascript\">location.href='signUp.php';</script>";
 }
-
  if(($_POST[username]!=null)&&($_POST[password]==$_POST[confirmPassword])&&($_POST[email]!=null)&&($_POST[answer]!=null)){
  	$user_query=mysql_query("INSERT INTO `UserList` (`id`, `username`, `password`, `grade`, `email`, `question`, `answer`, `admin`) VALUES (NULL, '$_POST[username]', '$_POST[password]', '$_POST[grade]', '$_POST[email]', '$_POST[question]', '$_POST[answer]','0')",$link);
 // 	$array_result=mysql_fetch_array($user_query);
@@ -22,8 +21,6 @@ if($_GET[out]){
  	else{
 // 	echo "<script language=\"javascript\">alert(\"the infomation isn't complete\");</script>";		
  	}
-
-
 ?>
 <SCRIPT language = javascript>
 function CheckSignup()
@@ -57,7 +54,6 @@ function CheckSignup()
 	}
 			
 }
-
 </SCRIPT>
 <?php
 }//else{

@@ -92,7 +92,7 @@ boutique.controller('imageChanged', ['$scope', function ($scope) {
 boutique.controller('content',['$scope', function($scope){
     $scope.allUsersContent = false;
     $scope.quantityContent = false;
-    $scope.basketContent = false;
+    $scope.basketContent = true;
     $scope.publishContent = false;
     $scope.publishBDEContent = false;
     $scope.informationContent = false;
@@ -134,58 +134,3 @@ boutique.controller('content',['$scope', function($scope){
     }
 }]);
 
-/*boutique.controller('DropdownCtrl', ['$scope', function ($scope, $log) {
-  $scope.items = [
-    'The first choice!',
-    'And another choice for you.',
-    'but wait! A third!'
-  ];
-
-  $scope.status = {
-    isopen: false
-  };
-
-  $scope.toggled = function(open) {
-    $log.log('Dropdown is now: ', open);
-  };
-
-  $scope.toggleDropdown = function($event) {
-    $event.preventDefault();
-    $event.stopPropagation();
-    $scope.status.isopen = !$scope.status.isopen;
-  };
-}]);*/
-
-
-/*//controller of upload.html
-boutique.controller('uploaderCtrl', ['$scope', function($scope, $log, uiUploader) {
-  $scope.btn_remove = function(file) {
-    $log.info('deleting=' + file);
-    uiUploader.removeFile(file);
-  };
-  $scope.btn_clean = function() {
-    uiUploader.removeAll();
-  };
-  $scope.btn_upload = function() {
-    $log.info('uploading...');
-    uiUploader.startUpload({
-      url: 'http://realtica.org/ng-uploader/demo.html',
-      concurrency: 2,
-      onProgress: function(file) {
-        $log.info(file.name + '=' + file.humanSize);
-        $scope.$apply();
-      },
-      onCompleted: function(file, response) {
-        $log.info(file + 'response' + response);
-      }
-    });
-  };
-  $scope.files = [];
-  var element = document.getElementById('file1');
-  element.addEventListener('change', function(e) {
-    var files = e.target.files;
-    uiUploader.addFiles(files);
-    $scope.files = uiUploader.getFiles();
-    $scope.$apply();
-  });
-}]);*/

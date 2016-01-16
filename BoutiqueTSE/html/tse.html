@@ -90,12 +90,6 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand" href="../php/tse.php">Welcome to OS of TSE</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -217,13 +211,14 @@
               <img src="http://placehold.it/320x150" alt=""/>
               <div class="caption">
                 <h4 id="produit1_price"></h4>
-                <h4><a id="produit1_name" href="#"></a></h4>
+                <h4 class="nameProduit"><a id="produit1_name" href="#"></a></h4>
                 <p id = "produit1_description"></p>
                 <h6 id = "produit1_upload_username"></h6>
                 <h6 id = "produit1_upload_date"></h6>
               </div>
             </div>
           </div>
+          
 
           <div id="produit2" class="col-sm-4 col-lg-4 col-md-4">
             <div class="thumbnail">
@@ -352,7 +347,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.js"></script>
-    	<script>
+    <script>
 		$(document).ready(function(){
 	   //限制字符个数
 	   	$("p").each(function(){

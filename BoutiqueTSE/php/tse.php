@@ -41,37 +41,6 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		}
 		if (!$type)//如果没有规定page则限定到第一页
 			$type = "All";
-// 		if (!$url) {
-// 			$url = $_SERVER["REQUEST_URI"];//初始化到默认的地址
-// 		}
-	
-// 		//URL分析：
-// 		$parse_url = parse_url($url);//使用parse_url进行数据的分析
-// 		$url_query = $parse_url["query"]; //单独取出URL的查询字串
-// 		if ($url_query) {
-// 			$url_query = ereg_replace("(^|&)type=$type", "", $url_query);
-	
-// 			$url = str_replace($parse_url["query"], $url_query, $url);
-// 			if ($url_query){
-// 				$url .= "&type";
-// 			}
-// 			else{
-// 				$url .= "type";
-// 			}
-// 		} else {
-// 			$url .= "?type";//给url加上type的标签 实际是给后来用get来获取的
-// 		}
-// 		$type_All = " <a href='$url=All'><h4>ALL</h4></a> ";
-// 		echo "<script language=\"javascript\">document.getElementById(\"type_All\").innerHTML=\"$type_All\";</script>";
-// 		$type_Clothes = " <a href='$url=Clothes'><h4>Clothes</h4></a> ";
-// 		echo "<script language=\"javascript\">document.getElementById(\"type_Clothes\").innerHTML=\"$type_Clothes\";</script>";
-// 		$type_Appliances = " <a href='$url=Appliances'><h4>Appliances</h4></a> ";
-// 		echo "<script language=\"javascript\">document.getElementById(\"type_Appliances\").innerHTML=\"$type_Appliances\";</script>";
-// 		$type_Furnitures = " <a href='$url=Furnitures'><h4>Furnitures</h4></a> ";
-// 		echo "<script language=\"javascript\">document.getElementById(\"type_Furnitures\").innerHTML=\"$type_Furnitures\";</script>";
-// 		$type_Residences = " <a href='$url=Residences'><h4>Residences</h4></a> ";
-// 		echo "<script language=\"javascript\">document.getElementById(\"type_Residences\").innerHTML=\"$type_Residences\";</script>";
-	
 	}
 	
 	/***

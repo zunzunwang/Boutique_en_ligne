@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="produit1_description" key="selection"/>
+		<item value="submit" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="submit"/>
+			<item value="form-upload"/>
+			<item value="hide.png"/>
 			<item value="produit1_description"/>
 			<item value="headImg"/>
 			<item value="signinform"/>
-			<item value="form-upload"/>
 			<item value="html"/>
 			<item value="contact"/>
-			<item value="get"/>
-			<item value="page"/>
 		</list>
 		<list key="replacehistory">
+			<item value="form-article"/>
 			<item value="Uploadform"/>
 			<item value="form-myAccount"/>
 			<item value="Bde_produit_list"/>

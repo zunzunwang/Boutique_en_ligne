@@ -25,7 +25,7 @@
       footer{
        	text-align: center;
       }
-      .form-upload {
+      .form-article {
        	/*max-width: 700px;*/
        	padding: 19px 29px 29px;
 	      margin: 0 auto 20px;
@@ -38,13 +38,13 @@
     	  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
       	box-shadow: 0 1px 2px rgba(0,0,0,.05);
       }
-      .form-upload .form-upload-heading,
-      .form-upload{
+      .form-article .form-article-heading,
+      .form-article{
        	margin-bottom: 10px;
       }
-	    .form-upload input[type="text"],
-    	.form-upload input[type="password"],
-      .form-upload select {
+	    .form-article input[type="text"],
+    	.form-article input[type="password"],
+      .form-article select {
        	/*font-size: 30px;
        	margin-bottom: 15px;*/
        	width: 100%;
@@ -52,9 +52,14 @@
        	margin-bottom: 15px;
        	padding: 7px 9px;
       }
-		  select{
-			  width:20% !important;
-		  }
+      select{
+      width:20% !important;
+      }
+      .contentBody{
+        margin: 0 5%; 
+      }
+
+		  
 
     </style>
 
@@ -66,12 +71,6 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <p id="label_username" class="navbar-brand"></p>                
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -104,7 +103,7 @@
       
     </header>
 
-
+	<div class="contentBody">
     <div class="row">
       <div class="col-md-6">
         <a href="index.html"><img id="marque" src="../img/marque.png"></a>
@@ -114,55 +113,57 @@
     </div>
 
     <div class="article">
-    	<form class="form-upload">
+    	<form class="form-article" action="#" method="post" name="articleform" onsubmit="return Checkarticle();">
         <div class="row">
           <div class="col-md-5 col-md-offset-1">
             <img src="http://placehold.it/300x400" alt="">
           </div>
           <div class="col-md-6">
-            <h2 id="produit_name">这里是商品名称</h2>
+            <h2 id="produit_name">produit_name</h2>
             <h6><br /></h6>
-            <h4 id="produit_price">Price: 这是价格</h4>
+            <h4 id="produit_price">Price:</h4>
+            <h5 id="produit_description" style="color:#6C6C6C">Description:</h5>
+            
             <h6><br /></h6>
             <h4>
             	Size:&nbsp;&nbsp;&nbsp;
-            	<div id="produit_size" class="btn-group" data-toggle="buttons">
-  					   	<label class="btn btn-default active">
-    							<input type="radio" name="size" id="size1" autocomplete="off" checked> S
+            	<div id="produit_size" name="produit_size" class="btn-group" data-toggle="buttons">
+  					    	<label class="btn btn-default active">
+    							<input type="radio" name="size1" id="size1" autocomplete="off" value="S" checked> S
 	  						</label>
   							<label class="btn btn-default">
-    							<input type="radio" name="size" id="size2" autocomplete="off"> M
+    							<input type="radio" name="size2" id="size2" autocomplete="off" value="M"> M
   							</label>
   							<label class="btn btn-default">
-    							<input type="radio" name="size" id="size3" autocomplete="off"> L
+    							<input type="radio" name="size3" id="size3" autocomplete="off" value="L"> L
   							</label>
 	  						<label class="btn btn-default">
-    							<input type="radio" name="size" id="size4" autocomplete="off"> XL
+    							<input type="radio" name="size4" id="size4" autocomplete="off" value="XL"> XL
   							</label>
   							<label class="btn btn-default">
-    							<input type="radio" name="size" id="size5" autocomplete="off"> XXL
+    							<input type="radio" name="size5" id="size5" autocomplete="off" value="XXL"> XXL
   							</label>
-					   	</div>
-					  </h4>
+				 </div>
+		    </h4>
 					  <h6><br /></h6>
             <h4>
             	Color:&nbsp;&nbsp;
-            	<div id="produit_color" class="btn-group" data-toggle="buttons">
+            	<div id="produit_color" name="produit_color" class="btn-group" data-toggle="buttons">
   							<label class="btn btn-default active">
-    							<input type="radio" name="color" id="color1" autocomplete="off" checked> Black
+    							<input type="radio" name="color_Black" id="color1" autocomplete="off" value="Black" checked> Black
   							</label>
   							<label class="btn btn-default">
-    							<input type="radio" name="color" id="color2" autocomplete="off"> White
+    							<input type="radio" name="color_White" id="color2" autocomplete="off" value="White"> White
   							</label>
   							<label class="btn btn-default">
-    							<input type="radio" name="color" id="color3" autocomplete="off"> Blue
+    							<input type="radio" name="color_Blue" id="color3" autocomplete="off" value="Blue"> Blue
   							</label>
 						  </div>
-					  </h4>
+	        </h4>
 					  <h6><br /></h6>
             <h4>
             	Quantity: 
-						  <select id="quantity" onclick="own_quantity()" >
+						  <select name="produit_quantity" class="form-control" id="quantity" onchange="own_quantity()" >
 							  <option value="1">1</option>
 							  <option value="2">2</option>
 							  <option value="3">3</option>
@@ -176,9 +177,11 @@
 
             <h6><br /></h6>
             <div id="buy" class="btn-toolbar" role="toolbar">
-            	<div class="btn-group" role="group"><button type="button" class="btn btn-primary">Contact</button></div>
-  						<div class="btn-group" role="group"><button type="button" class="btn btn-primary">Buy</button></div>					
-					  </div>
+  				<div class="btn-group" role="group"><button class="btn btn-primary" type="submit">Buy now!</button></div>
+  				<h4><br /></h4>
+  				<a href="../php/index.php#contact">Contact us for more information?</a>
+  									
+			</div>
 
           </div>
             	
@@ -186,7 +189,8 @@
       </form>
     	
     </div>
-
+    </div>
+    
     <hr style="border:1px solid black;" />
     
     <footer>
@@ -215,6 +219,11 @@
     		
     	}
     		
+    }
+    
+    function  Checkarticle(){
+    		alert("please fill in your quantity");
+    		return false;		
     }
     </script>
     
