@@ -175,7 +175,8 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 			<script>$('<?php echo " p > button"?>').attr('class',"btn btn-default btn-xs");</script>
 			<?php
 		
-	}	
+	}
+
 }
 
 ?>

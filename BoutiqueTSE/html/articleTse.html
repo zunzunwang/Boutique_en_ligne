@@ -336,7 +336,11 @@
 		}
 		}
 	
-	function reply(comment_name,comment_date,comment){
+
+	
+    </script>
+    <script>
+		function reply(comment_name,comment_date,comment){
     	comment=comment.replace(/<br>/g,"\n");
     	comment=comment.replace(/&nbsp;/g," ");
 		document.getElementById("comment").innerText="";
@@ -347,8 +351,7 @@
 		var insertText=reference_title+reference_content+line;
 		document.getElementById("comment").innerText=insertText;		
 	}
-	
-    </script>
+   </script>
 
 
 	</body>
