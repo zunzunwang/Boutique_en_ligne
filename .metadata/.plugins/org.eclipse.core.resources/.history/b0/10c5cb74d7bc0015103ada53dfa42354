@@ -257,8 +257,7 @@
     <script>
     	$(document).ready(function(){
     		$('#clear').click(function(){
-    			//$("textarea[id='comment']").val("").focus();
-    			document.getElementById("comment").innerText="";
+    			$("textarea[id='comment']").val("").focus();
     		});
     	});
     </script>

@@ -155,7 +155,7 @@
             <div class="col-md-10 col-md-offset-1">
             <label for="comment">Comment:</label>
             <form>
-            <textarea name="comment" class="form-control" rows="9" id="comment" placeholder="Leave a message for him..."></textarea>
+            <textarea name="comment" class="form-control" rows="3" id="comment" placeholder="Leave a message for him..."></textarea>
             <br />
             <div id="comment_button" class="btn-toolbar pull-right" role="toolbar">
             <div class="btn-group" role="group"><button type="button" class="btn btn-danger" id="clear">Clear</button></div>	
@@ -257,8 +257,7 @@
     <script>
     	$(document).ready(function(){
     		$('#clear').click(function(){
-    			//$("textarea[id='comment']").val("").focus();
-    			document.getElementById("comment").innerText="";
+    			$("textarea[id='comment']").val("").focus();
     		});
     	});
     </script>
@@ -336,14 +335,13 @@
 		}
 	
 	function reply(comment_name,comment_date,comment){
-		document.getElementById("comment").innerText="";		
-		var reference_title="reply to "+comment_name+" for comment at "+comment_date+":\n";
-		var reference_content=comment+"\n";
-		var line="========================================================================================================\n";
-		var insertText=reference_title+reference_content+line;
-		document.getElementById("comment").innerText=insertText;		
+		
+		alert(comment_name);
+		alert(comment_date);
+		alert(comment);
+
+		
 	}
-	
     </script>
 
 

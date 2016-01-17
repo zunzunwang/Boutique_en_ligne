@@ -162,7 +162,7 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		$comment_date=$div_name."_date";
 		echo "<script language=\"javascript\">document.getElementById(\"$comment_date\").innerHTML=\"$row[comment_date]&nbsp&nbsp&nbsp<button>reply</button>\";</script>";
 		?>
-		<script>$('<?php echo "#".$comment_date." > button"?>').attr('onclick',"reply('<?php echo $row[comment_username]?>','<?php echo $row[comment_date]?>','<?php echo $row[comment_description]?>')");</script>;
+		<script>$('<?php echo " p > button"?>').attr('onclick',"reply(<?php echo $comment_name.",".$comment_date.",".$comment_description; ?>)");</script>;
 		<?php	
 		$index += 1;
 		}
