@@ -154,11 +154,7 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	//$('button').attr('type',"submit");					 
 	</script>
 	<?php
-	foreach ($_POST AS $key=>$value)
-	{
-		echo $key;
-		echo "<br>";
-	}
+
 	
 	
 	
@@ -167,28 +163,3 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 }
 
 ?>
-
-<SCRIPT language = javascript>
-function CheckUpload()
-{
-	//定义一个form表单其中名字为signiform 其中的变量名称为id取他的值 id优先级大于name
-	
-	if (Uploadform.name.value==""){
-		alert("please fill in your name");
-		Uploadform.name.focus();
-		return false;		
-	}
-
-	if (Uploadform.price.value==""){
-		alert("price can't be empty");
-		Uploadform.price.focus();
-		return false;		
-	}
-	if (Uploadform.description.value==""){
-		alert("description can't be empty");
-		Uploadform.description.focus();
-		return false;		
-	}
-		
-}
-</SCRIPT>

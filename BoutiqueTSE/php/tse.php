@@ -145,7 +145,7 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		 ?>
 		 <SCRIPT language = javascript>
 		 function dir_article(){
-			 $('<?php echo "#".$produit_name; ?>').attr('href',"<?php echo "../php/article.php?from_list=tse&articleId=".$row[id]?>");
+			 $('<?php echo "#".$produit_name; ?>').attr('href',"<?php echo "../php/articleTse.php?from_list=tse&articleId=".$row[id]?>");
 			 }		
 		 </SCRIPT>
 		 <?php		 

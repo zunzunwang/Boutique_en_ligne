@@ -50,8 +50,6 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		}
 		if($list=='bde')
 			$list='Bde_produit_list';
-		else 
-			$list='Tse_produit_list';
 		
 		if($_GET[articleId]){//先要获得当前发送的Id的值否则返回主页
 			$produit_id=$_GET[articleId];
