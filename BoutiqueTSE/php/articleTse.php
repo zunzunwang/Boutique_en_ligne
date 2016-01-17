@@ -161,8 +161,10 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		echo "<script language=\"javascript\">document.getElementById(\"$comment_description\").innerHTML=\"$row[comment_description]\";</script>";
 		$comment_date=$div_name."_date";
 		echo "<script language=\"javascript\">document.getElementById(\"$comment_date\").innerHTML=\"$row[comment_date]&nbsp&nbsp&nbsp<button>reply</button>\";</script>";
+		$content=codetohtm($row[comment_description]);
+		echo $content;
 		?>
-		<script>$('<?php echo "#".$comment_date." > button"?>').attr('onclick',"reply('<?php echo $row[comment_username]?>','<?php echo $row[comment_date]?>','<?php echo $row[comment_description]?>')");</script>;
+		<script>$('<?php echo "#".$comment_date." > button"?>').attr('onclick',"reply('<?php echo $row[comment_username]?>','<?php echo $row[comment_date]?>','<?php echo $content?>')");</script>;
 		<?php	
 		$index += 1;
 		}

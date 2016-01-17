@@ -13,4 +13,9 @@ function htmtocode($content) {
 	$content = str_replace("\n", "<br>", str_replace(" ", "&nbsp;", $content));
 	return $content;
 }
+
+function codetohtm($content) {
+	$content = str_replace("<br>","\n", str_replace("&nbsp;"," ", $content));
+	return $content;
+}
 ?>
