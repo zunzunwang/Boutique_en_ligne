@@ -149,33 +149,33 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	$index=1;
 	$result_comment=mysql_query("SELECT * FROM `Comment_list` WHERE `produit_id` = '$produit_id' limit $firstcount,$displaypg");
 	
-	while($row=mysql_fetch_array($result_comment)){
-		//在此填充每个单
-		$div_name ="comment$index";
-		?>
-		<script>$('<?php echo "#".$div_name ?>').attr('class',"well well-lg")</script>
-		<?php
-		$comment_name=$div_name."_name";
-		echo "<script language=\"javascript\">document.getElementById(\"$comment_name\").innerHTML=\"$row[comment_username]:\";</script>";
-		$comment_description=$div_name."_description";
-		echo "<script language=\"javascript\">document.getElementById(\"$comment_description\").innerHTML=\"$row[comment_description]\";</script>";
-		$comment_date=$div_name."_date";
-		echo "<script language=\"javascript\">document.getElementById(\"$comment_date\").innerHTML=\"$row[comment_date]&nbsp&nbsp&nbsp<button>reply</button>\";</script>";
-		$content=codetohtm($row[comment_description]);
-		echo $content;
-		?>
-		<script>$('<?php echo "#".$comment_date." > button"?>').attr('onclick',"reply('<?php echo $row[comment_username]?>','<?php echo $row[comment_date]?>','<?php echo $content?>')");</script>;
-		<?php	
-		$index += 1;
-		}
-		?>
-		<script>$('<?php echo " p > button"?>').attr('class',"btn btn-default btn-xs");</script>;
-		<?php
+	if($result_comment){
+		while($row=mysql_fetch_array($result_comment)){
+			//在此填充每个单
+// 			$content=codetohtm($row[comment_description]);
+// 			echo $content;
 		
-
-
+				
+			$div_name ="comment$index";
+			?>
+			<script>$('<?php echo "#".$div_name ?>').attr('class',"well well-lg")</script>
+			<?php
+			$comment_name=$div_name."_name";
+			echo "<script language=\"javascript\">document.getElementById(\"$comment_name\").innerHTML=\"$row[comment_username]:\";</script>";
+			$comment_description=$div_name."_description";
+			echo "<script language=\"javascript\">document.getElementById(\"$comment_description\").innerHTML=\"$row[comment_description]\";</script>";
+			$comment_date=$div_name."_date";
+			echo "<script language=\"javascript\">document.getElementById(\"$comment_date\").innerHTML=\"$row[comment_date]&nbsp&nbsp&nbsp<button>reply</button>\";</script>";				
+			?>
+			<script>$('<?php echo "#".$comment_date." > button"?>').attr('onclick',"reply('<?php echo $row[comment_username];?>','<?php echo $row[comment_date];?>','<?php echo $row[comment_description];?>')");</script>
+			<?php	
+			$index += 1;
+			}
+			?>
+			<script>$('<?php echo " p > button"?>').attr('class',"btn btn-default btn-xs");</script>
+			<?php
 		
-	
+	}	
 }
 
 ?>
