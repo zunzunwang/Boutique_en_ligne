@@ -143,7 +143,7 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		$produit_delete=$div_name."_delete";
 		echo "<script language=\"javascript\">document.getElementById(\"$produit_delete\").innerHTML=\"<button>Delete</button>\";</script>";
 		?>
-		<script>$('<?php echo "#".$produit_delete." > button"?>').attr('onclick',"produit_delete(<?php echo $row[id] ?>)");</script>;
+		<script>$('<?php echo "#".$produit_delete." > button"?>').attr('onclick',"produit_delete(<?php echo $row[id] ?>)");</script>
 		<?php
 
 		$index += 1;

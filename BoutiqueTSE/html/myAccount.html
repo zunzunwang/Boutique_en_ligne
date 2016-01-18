@@ -301,7 +301,7 @@
         <div ng-show="publishContent">
           <!-- <span>这里是发布界面</span> -->
           <div>
-            <form class="form-myAccount" action="../php/myAccount.php" method="post" name="Uploadform" onsubmit="return CheckUpload();">
+            <form class="form-myAccount" action="../php/upload.php" method="post" name="Uploadform" onsubmit="return CheckUpload();">
               <input id ="name" name="name" type="text" placeholder="Name">
               <input id="price" name="price" type="text" placeholder="Price">
               <select id="type" name="type" class="form-control">
@@ -312,15 +312,13 @@
               </select>
               <textarea id="description" name="description" rows="5" placeholder="The description of your produit..."></textarea>
               <div>
-                <input type="file" id="file1" multiple/>
+                <input name="upfile" type="file" id="file1" multiple/>
+                <p>upload type:'.jpg/.jpeg/.png/.pjpeg/.gif/.bmp/.x-png'</p>
               </div>
-
               <button id="upload" class="btn btn-primary" type="submit">Publish</button>
           
             </form>
- 
-          </div>
- 
+          </div> 
         </div>
         
         <div ng-show="informationContent">
