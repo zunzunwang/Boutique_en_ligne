@@ -61,6 +61,12 @@
       textarea{
         width: 100%;
       }
+      .well{
+      margin-bottom:0 !important;
+      }
+      .well-sm{
+      padding:0 !important;
+      }
 
 /*      button{
         width: 100%;
@@ -136,89 +142,127 @@
       <div class="col-md-9">
         <!-- 显示 -->
         <div ng-show="allUsersContent">
-<!--           <table class="table table-hover">
-	        <thead>
-	          <tr>
-	            <th>Username</th>
-	            <th>Email</th>
-	          </tr>
-	        </thead>
-	        <tbody>
-	          <tr>
-	            <td id="user1"></td>
-	            <td id="email1"></td>
-	          </tr>
-	          <tr>
-	            <td id="user2"></td>
-	            <td id="email2"></td>
-	          </tr>
-	          <tr>
-	            <td id="user3"></td>
-	            <td id="email3"></td>
-	          </tr>
-	          <tr>
-	            <td id="user4"></td>
-	            <td id="email4"></td>
-	          </tr>
-	          <tr>
-	            <td id="user5"></td>
-	            <td id="email5"></td>
-	          </tr>
-	          <tr>
-	            <td id="user6"></td>
-	            <td id="email6"></td>
-	          </tr>
-	          <tr>
-	            <td id="user7"></td>
-	            <td id="email7"></td>
-	          </tr>
-	          <tr>
-	            <td id="user8"></td>
-	            <td id="email8"></td>
-	          </tr>
-	          <tr>
-	            <td id="user9"></td>
-	            <td id="email9"></td>
-	          </tr>
-	          <tr>
-	            <td id="user10"></td>
-	            <td id="email10"></td>
-	          </tr>
-	        </tbody>
-          </table> -->
-          <ul>
-          
-            <li id="user1" class="list-group-item">
-              <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span>
-            </li>
-             <li id="user2" class="list-group-item">
-              <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span>
-            </li>
-            <li id="user3" class="list-group-item">
-              <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span>
-            </li>
-            <li id="user4" class="list-group-item">
-              <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span>
-            </li>
-            <li id="user5" class="list-group-item">
-              <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span>
-            </li>
-            <li id="user6" class="list-group-item">
-              <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span>
-            </li>
-            <li id="user7" class="list-group-item">
-              <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span>
-            </li>
-            <li id="user8" class="list-group-item">
-              <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span>
-            </li>
-            <li id="user9" class="list-group-item">
-              <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span>
-            </li>
-            <li id="user10" >
-<!--               <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span>
- -->            </li>                      
-          </ul>
+        
+        	<div id="user1div">
+          		<div class="col-md-4">
+          			<h6 id="user1"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email1"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete1"></a></h6>
+          		</div>
+            </div>
+            
+            <div id="user2div">
+          		<div class="col-md-4">
+          			<h6 id="user2"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email2"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete2"></a></h6>
+          		</div>
+          	</div>
+          	<div id="user3div">
+          		<div class="col-md-4">
+          			<h6 id="user3"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email3"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete3"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="user4div">
+          		<div class="col-md-4">
+          			<h6 id="user4"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email4"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete4"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="user5div">
+          		<div class="col-md-4">
+          			<h6 id="user5"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email5"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete5"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="user6div">
+          		<div class="col-md-4">
+          			<h6 id="user6"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email6"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete6"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="user7div">
+          		<div class="col-md-4">
+          			<h6 id="user7"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email7"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete7"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="user8div">
+          		<div class="col-md-4">
+          			<h6 id="user8"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email8"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete8"></a></h6>
+          		</div>          	
+          	</div>
+          	
+          	<div id="user9div">
+          		<div class="col-md-4">
+          			<h6 id="user9"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email9"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete9"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="user10div">
+          		<div class="col-md-4">
+          			<h6 id="user10"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email10"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete10"></a></h6>
+          		</div>
+          	</div>
+
+
           <nav>
           	<div id="pager_records"></div>
           	<div id="page"></div>	          
@@ -276,6 +320,31 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.js"></script>
+    
+    <script>	
+	function user_delete(id){
+  	  var xmlhttp;
+	  if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	  else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	  xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+		  alert("you have deleted this user.");
+
+		  location.href='../php/admin.php';   	    
+	    }
+	  }
+	xmlhttp.open("GET","../php/delete_user.php?id="+id,true);
+	xmlhttp.send(); 
+	}
+	</script>
 
 	</body>
 </html>

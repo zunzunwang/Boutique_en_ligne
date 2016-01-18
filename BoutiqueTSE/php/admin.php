@@ -108,11 +108,24 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		//  		echo $row['username'];
 		//  		echo "<br />";
 		$user_name = "user$index";
+		$user_div = $user_name."div";
 		$user_email = "email$index";
+		$user_delete ="delete$index";
 		//  		$user_name=$div_name."_name";
 		echo "<script language=\"javascript\">document.getElementById(\"$user_name\").innerHTML=\"$row[username]\";</script>";
 		echo "<script language=\"javascript\">document.getElementById(\"$user_email\").innerHTML=\"$row[email]\";</script>";
+		echo "<script language=\"javascript\">document.getElementById(\"$user_delete\").innerHTML=\"<span></span>\";</script>";
+		
 		//  		echo "<script language=\"javascript\">document.getElementById(\"user\").innerHTML=\"$row[username]\";</script>";
+		?>
+		<script>
+		$('<?php echo "#".$user_div?>').attr('class',"row well well-sm");
+		$('<?php echo "#".$user_delete." > span"?>').attr('onclick',"user_delete(<?php echo $row[id] ?>)");
+		$('<?php echo "#".$user_delete." > span"?>').attr('class',"glyphicon glyphicon-remove pull-right");
+
+		
+		</script>
+		<?php
 		$index+=1;
 	}
 	}
