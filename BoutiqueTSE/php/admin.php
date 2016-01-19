@@ -132,25 +132,40 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 ?>
 	
 <SCRIPT language = javascript>
-function CheckUpload()
-{
-	//瀹氫箟涓�釜form琛ㄥ崟鍏朵腑鍚嶅瓧涓簊igniform 鍏朵腑鐨勫彉閲忓悕绉颁负id鍙栦粬鐨勫� id浼樺厛绾уぇ浜巒ame
-	if (Uploadform.name.value==""){
-		alert("please fill in your name");
-		Uploadform.name.focus();
-		return false;		
-	}
-	
-		if (Uploadform.price.value==""){
-			alert("price can't be empty");
-			Uploadform.price.focus();
-			return false;		
-		}
-		if (Uploadform.description.value==""){
-			alert("description can't be empty");
-			Uploadform.description.focus();
-			return false;		
-		}
-			
-	}
-	</SCRIPT>
+function CheckUpload(){
+ 	if (Uploadform.name.value=="")
+ 	{
+ 		alert("please write your product name.");
+ 		Uploadform.name.focus();
+ 		return false;
+ 	}
+ 	if (Uploadform.price.value=="")
+ 	{
+ 		alert("please wriite your price");
+ 		Uploadform.price.focus();
+ 		return false;
+ 	}
+ 	
+ 	if (isNaN(Uploadform.price.value))
+ 	{
+ 		alert("please write correct price");
+ 		Uploadform.price.focus();
+ 		return false;
+ 	}
+
+ 	if (Uploadform.description.value=="")
+ 	{
+ 		alert("the content can't be empty");
+ 		Uploadform.description.focus();
+ 		return false;
+ 	}
+ 	if (Uploadform.file.value=="")
+ 	{
+ 		alert("the image file can't be empty");
+ 		Uploadform.file.focus();
+ 		return false;
+ 	}
+
+
+}
+</SCRIPT>

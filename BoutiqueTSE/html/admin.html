@@ -272,27 +272,24 @@
 
         <div ng-show="publishBDEContent">
           <div>
-            <form class="form-admin">
-              <input type="text" placeholder="Name">
-              <input type="text" placeholder="Price">
-              <select class="form-control">
+            <form id="Uploadform" class="form-admin" enctype="multipart/form-data" action="../php/uploadBde.php" method="post" name="Uploadform" onsubmit="return CheckUpload();">
+              <input id ="name" name="name" type="text" placeholder="Name">
+              <input id="price" name="price" type="text" placeholder="Price">
+              <select id="type" name="type" class="form-control">
                 <option>Clothes</option>
-                <option>Appliance</option>
+                <option>Appliances</option>
+                <option>Furnitures</option>
+                <option>Residences</option>
               </select>
-              <textarea rows="5" placeholder="The description of your produit..."></textarea>
+              <textarea id="description" name="description" rows="5" placeholder="The description of your produit..."></textarea>
               <div>
-                <div style="float:right;">
-                  <button ng-click="btn_upload()">Upload</button>
-                  <button ng-click="btn_clean()">Remove all</button>
-                </div>
-                <input type="file" id="file1" multiple/>
+                <input name="upfile" type="file" id="file"/>
+                <p>upload type:'.jpg/.jpeg/.png/.pjpeg/.gif/.bmp/.x-png'</p>
               </div>
-
-              <button id="upload" class="btn btn-primary" type="submit">Publish</button>
-          
+              <button id="upload" name="submit" class="btn btn-primary" type="submit" value="submit" >Publish</button>     
             </form>
- 
-          </div>
+          </div> 
+          
         </div>
         
         <div ng-show="quantityContent">
@@ -344,6 +341,89 @@
 	xmlhttp.open("GET","../php/delete_user.php?id="+id,true);
 	xmlhttp.send(); 
 	}
+	$(document).ready(function(){
+    	$('#user1div').hover(function(){
+    		$('#user1div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user1div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user2div').hover(function(){
+    		$('#user2div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user2div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user3div').hover(function(){
+    		$('#user3div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user3div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user4div').hover(function(){
+    		$('#user4div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user4div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user5div').hover(function(){
+    		$('#user5div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user5div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user6div').hover(function(){
+    		$('#user6div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user6div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user7div').hover(function(){
+    		$('#user7div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user7div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user8div').hover(function(){
+    		$('#user8div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user8div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user9div').hover(function(){
+    		$('#user9div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user9div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user10div').hover(function(){
+    		$('#user10div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user10div').css("background-color","#F5F5F5");
+
+    	});
+    	
+	});
 	</script>
 
 	</body>

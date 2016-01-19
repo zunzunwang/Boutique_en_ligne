@@ -154,6 +154,8 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	//$('button').attr('type',"submit");					 
 	</script>
 	<?php
+	
+//	include("../php/uploadTse.php");
 
 	
 	
@@ -163,3 +165,41 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 }
 
 ?>
+	<SCRIPT language=javascript>
+	function CheckUpload(){
+	 	if (Uploadform.name.value=="")
+	 	{
+	 		alert("please write your product name.");
+	 		Uploadform.name.focus();
+	 		return false;
+	 	}
+	 	if (Uploadform.price.value=="")
+	 	{
+	 		alert("please wriite your price");
+	 		Uploadform.price.focus();
+	 		return false;
+	 	}
+	 	
+	 	if (isNaN(Uploadform.price.value))
+	 	{
+	 		alert("please write correct price");
+	 		Uploadform.price.focus();
+	 		return false;
+	 	}
+
+	 	if (Uploadform.description.value=="")
+	 	{
+	 		alert("the content can't be empty");
+	 		Uploadform.description.focus();
+	 		return false;
+	 	}
+	 	if (Uploadform.file.value=="")
+	 	{
+	 		alert("the image file can't be empty");
+	 		Uploadform.file.focus();
+	 		return false;
+	 	}
+
+	
+	}
+	</SCRIPT>
