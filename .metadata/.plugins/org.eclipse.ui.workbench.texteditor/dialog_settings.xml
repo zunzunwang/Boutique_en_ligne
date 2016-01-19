@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="li" key="selection"/>
+		<item value="form" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="form"/>
+			<item value="//"/>
+			<item value="submit"/>
+			<item value="upfile"/>
+			<item value="upform"/>
 			<item value="li"/>
 			<item value="attr"/>
 			<item value="上传"/>
-			<item value="table"/>
-			<item value="fix"/>
-			<item value="pager_records"/>
-			<item value="well"/>
-			<item value="form-upload"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
 			<item value="div"/>
 			<item value="form_article_tse"/>
 			<item value="&apos;"/>
@@ -25,7 +26,6 @@
 			<item value="Uploadform"/>
 			<item value="form-myAccount"/>
 			<item value="Bde_produit_list"/>
-			<item value="resetform"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
