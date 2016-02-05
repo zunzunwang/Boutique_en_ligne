@@ -13,9 +13,9 @@
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 
     <style type="text/css">
-/*       body {
-  padding: 0px 80px;
-} */
+/*      body {
+        padding: 0px 80px;
+      }*/
       #container{
         background-color: #f5f5f5;
       }
@@ -38,6 +38,7 @@
         width: 25%;
         margin-top: 3%;
       }
+
       #date{
         text-align: center;
       }
@@ -52,19 +53,13 @@
       .contentBody{
         margin: 0 5%; 
       }
-/*       .nameProduit{
-      width:100px;
-      white-space:nowrap;
-       overflow:hidden;
-      text-overflow:ellipsis; 
-      } */
+      
       p{
 		word-break: break-all;
 	  }
 	  h4{
 	  	white-space: nowrap;
 	  }
-
       @media (max-width: 400px){
         #headImg,#annexe{
           display: none;
@@ -72,8 +67,8 @@
         #filtre{
           float: left;
           width:100%;
+          margin-bottom: 5%;
         }
-
 
       }
       
@@ -90,18 +85,18 @@
     </style>
 	</head>
 	<body>
-    <header>
+  <header>
       <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="../php/bde.php">Welcome to OS of BDE</a>
+                <a class="navbar-brand" href="../php/tse.php">Welcome to OS of TSE</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="../php/tse.php">Online Store of TSE</a>
+                        <a href="../php/bde.php">Online Store of BDE</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -130,17 +125,23 @@
         <a href="index.html"><img id="marque" src="../img/marque.png"></a>
       </div>
       <div class="col-md-6">
+        <!-- <fieldset id="rechercher">
+              <input type="text" id="search" placeholder="Search" value="" class="placeholder">
+              <button type="submit" id="searchButton" class="btn btn-primary">Search</button>
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </fieldset> -->
         <select id="filtre">
           <option value="fi1">--------All--------</option>
           <option value="fi2">Today</option>
           <option value="fi3">Within a week</option>
           <option value="fi3">Within a month</option>
         </select>
+
       </div>
     </div>
 
     <div id="total"   ng-controller="showHide">
-<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\start of the second control/////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////start of the second control/////////////////////////////////////////// -->
       <div id="headImg" ng-controller="imageChanged" ng-show="slidesLooping">
       
         <div id="imgLoop">
@@ -162,7 +163,7 @@
         <pre id="date">Today is: <em>{{dt | date:'fullDate' }}</em></pre>
         <img id="hide" type="button" src="../img/hide.png" ng-show="hideImg" ng-click="hide()" />
         <img id="show" type="button" src="../img/show.png" ng-show="showImg" ng-click="show()" />
-        <!-- <img id="backgroundColor" type="button" src="img\bg.png" ng-click="backcolor()" ng-dblclick="returnWhite()"/> -->
+        <!-- <img id="backgroundColor" type="button" src="img/bg.png" ng-click="backcolor()" ng-dblclick="returnWhite()"/> -->
         <br/>
       </div>
       
@@ -173,138 +174,158 @@
     </div>
 
     <div class="row">
-          <div id="produit1" class="col-sm-3 col-lg-3 col-md-3">
-            <div class="thumbnail">
-              <img id="produit1_image" src="http://placehold.it/320x150" alt=""/>
+      
+      <div class="col-md-3">
+        <div class="list-group">
+          <a class="list-group-item active">
+            <h3 class="list-group-item-heading">Item List</h3>
+          </a>
+          <a href="../php/tse.php?type=All" class="list-group-item">
+            <h4>All</h4>
+            <p class="list-group-item-text">...</p>
+          </a>
+           <a href='../php/tse.php?type=Clothes' class="list-group-item">
+            <h4>Clothes</h4>
+            <p class="list-group-item-text">...</p>
+          </a>
+           <a href='../php/tse.php?type=Appliances' class="list-group-item">
+            <h4>Appliances</h4>
+            <p class="list-group-item-text">Computer Printer Camera ...</p>           
+          </a>
+           <a href='../php/tse.php?type=Furnitures' class="list-group-item">
+            <h4>Furnitures</h4>
+            <p class="list-group-item-text">...</p>
+          </a>
+           <a href='../php/tse.php?type=Residences' class="list-group-item">
+            <h4>Residences</h4>
+            <p class="list-group-item-text">...</p>
+          </a>
+        
+      </div>
+    </div>
+
+      <div class="col-md-9">
+        <div class="row">
+          <div id="produit1" class="col-sm-4 col-lg-4 col-md-4">
+            <div>
+              <img id="produit1_image" width="350px" height="150px"/>
               <div class="caption">
                 <h4 id="produit1_price"></h4>
                 <h4 class="nameProduit"><a id="produit1_name" href="#"></a></h4>
-                <p id = "produit1_description">There isn't any description.     </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="produit2" class="col-sm-3 col-lg-3 col-md-3">
-            <div class="thumbnail">
-              <img id="produit2_image" src="http://placehold.it/320x150" alt=""/>
-              <div class="caption">
-                <h4 id="produit2_price"></h4>
-                <h4  class="nameProduit"><a id="produit2_name" href="#"></a></h4>
-                <p id = "produit2_description">There isn't any description.     </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="produit3" class="col-sm-3 col-lg-3 col-md-3">
-            <div class="thumbnail">
-              <img id="produit3_image" src="http://placehold.it/320x150" alt=""/>
-              <div class="caption">
-                <h4 id="produit3_price"></h4>
-                <h4  class="nameProduit"><a id="produit3_name" href="#"></a></h4>
-                <p id = "produit3_description">There isn't any description.     </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="produit4" class="col-sm-3 col-lg-3 col-md-3">
-            <div class="thumbnail">
-              <img id="produit4_image" src="http://placehold.it/320x150" alt=""/>
-              <div class="caption">
-                <h4 id="produit4_price"></h4>
-                <h4  class="nameProduit"><a id="produit4_name" href="#"></a></h4>
-                <p id = "produit4_description">There isn't any description.     </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="produit5" class="col-sm-3 col-lg-3 col-md-3">
-            <div class="thumbnail">
-              <img id="produit5_image" src="http://placehold.it/320x150" alt=""/>
-              <div class="caption">
-                <h4 id="produit5_price" ></h4>
-                <h4  class="nameProduit"><a id="produit5_name" href="#"></a></h4>
-                <p id = "produit5_description">There isn't any description.     </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="produit6" class="col-sm-3 col-lg-3 col-md-3">
-            <div class="thumbnail">
-              <img id="produit6_image" src="http://placehold.it/320x150" alt=""/>
-              <div class="caption">
-                <h4 id="produit6_price"></h4>
-                <h4  class="nameProduit"><a id="produit6_name" href="#"></a></h4>
-                <p id = "produit6_description">There isn't any description.     </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="produit7" class="col-sm-3 col-lg-3 col-md-3">
-            <div class="thumbnail">
-              <img id="produit7_image" src="http://placehold.it/320x150" alt=""/>
-              <div class="caption">
-                <h4 id="produit7_price"></h4>
-                <h4  class="nameProduit"><a id="produit7_name" href="#"></a></h4>
-                <p id = "produit7_description">There isn't any description.     </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="produit8" class="col-sm-3 col-lg-3 col-md-3">
-            <div class="thumbnail">
-              <img id="produit8_image" src="http://placehold.it/320x150" alt=""/>
-              <div class="caption">
-                <h4 id="produit8_price"></h4>
-                <h4  class="nameProduit"><a id="produit8_name" href="#"></a></h4>
-                <p id = "produit8_description">There isn't any description.     </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="produit9" class="col-sm-3 col-lg-3 col-md-3">
-            <div class="thumbnail">
-              <img id="produit9_image" src="http://placehold.it/320x150" alt=""/>
-              <div class="caption">
-                <h4 id="produit9_price"></h4>
-                <h4  class="nameProduit"><a id="produit9_name" href="#"></a></h4>
-                <p id = "produit9_description">There isn't any description.     </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="produit10" class="col-sm-3 col-lg-3 col-md-3">
-            <div class="thumbnail">
-              <img id="produit10_image" src="http://placehold.it/320x150" alt=""/>
-              <div class="caption">
-                <h4 id="produit10_price"></h4>
-                <h4  class="nameProduit"><a id="produit10_name" href="#"></a></h4>
-                <p id = "produit10_description">There isn't any description.     </p>
+                <p id = "produit1_description"></p>
+                <h6 id = "produit1_upload_username"></h6>
+                <h6 id = "produit1_upload_date"></h6>
               </div>
             </div>
           </div>
           
-          <div id="produit11" class="col-sm-3 col-lg-3 col-md-3">
+
+          <div id="produit2" class="col-sm-4 col-lg-4 col-md-4">
             <div class="thumbnail">
-              <img id="produit11_image" src="http://placehold.it/320x150" alt=""/>
+              <img id="produit2_image" width="350px" height="150px"/>
               <div class="caption">
-                <h4 id="produit11_price"></h4>
-                <h4  class="nameProduit"><a id="produit11_name" href="#"></a></h4>
-                <p id = "produit11_description">There isn't any description.     </p>
+                <h4 id="produit2_price"></h4>
+                <h4  class="nameProduit"><a id="produit2_name" href="#"></a></h4>
+                <p id = "produit2_description"></p>
+                <h6 id = "produit2_upload_username"></h6>
+                <h6 id = "produit2_upload_date"></h6>
               </div>
             </div>
           </div>
 
-          <div id="produit12" class="col-sm-3 col-lg-3 col-md-3">
+          <div id="produit3" class="col-sm-4 col-lg-4 col-md-4">
             <div class="thumbnail">
-              <img id="produit12_image" src="http://placehold.it/320x150" alt=""/>
+              <img id="produit3_image" width="350" height="150"/>
               <div class="caption">
-                <h4 id="produit12_price"></h4>
-                <h4  class="nameProduit"><a id="produit12_name" href="#"></a></h4>
-                <p id ="produit12_description">There isn't any description.     </p>
+                <h4 id="produit3_price"></h4>
+                <h4  class="nameProduit"><a id="produit3_name" href="#"></a></h4>
+                <p id = "produit3_description"></p>
+                <h6 id = "produit3_upload_username"></h6>
+                <h6 id = "produit3_upload_date"></h6>
               </div>
             </div>
           </div>
 
+          <div id="produit4" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img id="produit4_image" width="320" height="150"/>
+              <div class="caption">
+                <h4 id="produit4_price"></h4>
+                <h4  class="nameProduit"><a id="produit4_name" href="#"></a></h4>
+                <p id = "produit4_description"></p>
+                <h6 id = "produit4_upload_username"></h6>
+                <h6 id = "produit4_upload_date"></h6>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit5" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img id="produit5_image" width="320" height="150"/>
+              <div class="caption">
+                <h4 id="produit5_price"></h4>
+                <h4  class="nameProduit"><a id="produit5_name" href="#"></a></h4>
+                <p id = "produit5_description"></p>
+                <h6 id = "produit5_upload_username"></h6>
+                <h6 id = "produit5_upload_date"></h6>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit6" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img id="produit6_image" width="320" height="150"/>
+              <div class="caption">
+                <h4 id="produit6_price"></h4>
+                <h4  class="nameProduit"><a id="produit6_name" href="#"></a></h4>
+                <p id = "produit6_description"></p>
+                <h6 id = "produit6_upload_username"></h6>
+                <h6 id = "produit6_upload_date"></h6>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit7" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img id="produit7_image" width="320" height="150"/>
+              <div class="caption">
+                <h4 id="produit7_price"></h4>
+                <h4  class="nameProduit"><a id="produit7_name" href="#"></a></h4>
+                <p id = "produit7_description"></p>
+                <h6 id = "produit7_upload_username"></h6>
+                <h6 id = "produit7_upload_date"></h6>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit8" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img id="produit8_image" width="320" height="150"/>
+              <div class="caption">
+                <h4 id="produit8_price"></h4>
+                <h4  class="nameProduit"><a id="produit8_name" href="#"></a></h4>
+                <p id = "produit8_description"></p>
+                <h6 id = "produit8_upload_username"></h6>
+                <h6 id = "produit8_upload_date"></h6>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit9" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img id="produit9_image" width="320" height="150"/>
+              <div class="caption">
+                <h4 id="produit9_price"></h4>
+                <h4  class="nameProduit"><a id="produit9_name" href="#"></a></h4>
+                <p id = "produit9_description"></p>
+                <h6 id = "produit9_upload_username"></h6>
+                <h6 id = "produit9_upload_date"></h6>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
     </div>
 
@@ -321,15 +342,12 @@
         <span>copyright &copy;2016 <b><a href="http://www.telecom-st-etienne.fr/">TELECOM SAINT-ETIENNE</a></b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All rights reserved.</span>
       </div>
     </footer>
-
-    <!-- jQuery -->
+        <!-- jQuery -->
     <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.js"></script>
-    
-    
-	<script>
+    <script>
 		$(document).ready(function(){
 	   //限制字符个数
 	   	$("p").each(function(){

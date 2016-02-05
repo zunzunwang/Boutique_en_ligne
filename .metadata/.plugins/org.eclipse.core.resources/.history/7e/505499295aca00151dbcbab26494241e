@@ -335,14 +335,12 @@
 		function reply(comment_name,comment_date,comment){
 			comment=comment.replace(/<br>/g,"\n");
 			comment=comment.replace(/&nbsp;/g," ");
-			document.getElementById("comment").value="";
-			//document.getElementById("comment").innerText="";
+			document.getElementById("comment").innerText="";
 			var reference_title="reply to "+comment_name+" for comment at "+comment_date+":\n";
 			var reference_content=comment+"\n";
 			var line="================\n";
 			var insertText=reference_title+reference_content+line;
-			//document.getElementById("comment").innerText=insertText;
-			document.getElementById("comment").value=insertText;
+			document.getElementById("comment").innerText=insertText;
 			}
    </script>
 

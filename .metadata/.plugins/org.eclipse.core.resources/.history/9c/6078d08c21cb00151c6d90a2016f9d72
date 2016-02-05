@@ -140,13 +140,6 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	while($row=mysql_fetch_array($result)){
 		//在此填充每个单元
 		 $div_name ="produit$index";
-		 $produit_bound=$div_name."_bound";
-		 ?>
-		 <script>
-		 $('<?php echo "#".$produit_bound; ?>').attr('class',"thumbnail");		 
-		 </script>
-		 <?php
-		 
 		 $produit_name=$div_name."_name";
 		 echo "<script language=\"javascript\">document.getElementById(\"$produit_name\").innerHTML=\"$row[name]\";</script>";
 		 ?>
