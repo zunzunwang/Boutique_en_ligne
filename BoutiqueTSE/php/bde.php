@@ -118,6 +118,12 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	while($row=mysql_fetch_array($result)){
 		//在此填充每个单元
 		 $div_name ="produit$index";
+		 $produit_bound=$div_name."_bound";
+		 ?>
+		 <script>
+		 $('<?php echo "#".$produit_bound; ?>').attr('class',"thumbnail");		 
+		 </script>
+		 <?php
 		 $produit_name=$div_name."_name";
 		 echo "<script language=\"javascript\">document.getElementById(\"$produit_name\").innerHTML=\"$row[name]\";</script>";
 		 ?>
@@ -153,7 +159,17 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		 }
 		 else{
 		 	echo "<script language=\"javascript\">document.getElementById(\"$produit_description\").innerHTML=\"$description\";</script>";
-		 }		
+		 }
+		 $produit_image=$div_name."_image";
+		 // $image_size = getimagesize($row[img]);
+		 ?>
+		 <script>
+		 $('<?php echo "#".$produit_image; ?>').attr('src',"<?php echo "..\/upload_img\/".$row[img]?>");
+		 $('<?php echo "#".$produit_image; ?>').attr('width',"350px");
+		 $('<?php echo "#".$produit_image; ?>').attr('height',"150px");		 
+		 </script>
+		 <?php
+		 
 		 $index += 1;
 	}
 	
