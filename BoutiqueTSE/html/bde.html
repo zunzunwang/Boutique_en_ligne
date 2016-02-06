@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="Boutique">
-	<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Boutique en Ligne</title>
@@ -10,86 +10,11 @@
     <script src="../js/app.js"></script>
     <script type="../js/animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
-		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/bde.css">
 
-    <style type="text/css">
-/*       body {
-  padding: 0px 80px;
-} */
-      #container{
-        background-color: #f5f5f5;
-      }
-      #hide{
-        width: 30px;
-        width: 30px;
-        float: right;
-      }
-      #show{
-        width: 30px;
-        width: 30px;
-        float: right; 
-      }
-      #marque{
-        width: 40%;
-        height: 40%;
-      }
-      #filtre{
-        float: right;
-        width: 25%;
-        margin-top: 3%;
-      }
-      #date{
-        text-align: center;
-      }
-      #exhibition{
-        text-align: center;
-        color: red;
-        font-size: 50px;
-      }
-      footer{
-        text-align: center;
-      }
-      .contentBody{
-        margin: 0 5%; 
-      }
-/*       .nameProduit{
-      width:100px;
-      white-space:nowrap;
-       overflow:hidden;
-      text-overflow:ellipsis; 
-      } */
-      p{
-		word-break: break-all;
-	  }
-	  h4{
-	  	white-space: nowrap;
-	  }
-
-      @media (max-width: 400px){
-        #headImg,#annexe{
-          display: none;
-        }
-        #filtre{
-          float: left;
-          width:100%;
-        }
-
-
-      }
-      
-      @media (min-width: 767px) and (max-width: 1150px){
-      	.nameProduit{
-	  	  width: 80%;
-  		  white-space: nowrap;
-  		  overflow: hidden; 
-  		  text-overflow: ellipsis;
-	    }
-      
-      }
-
-    </style>
-	</head>
-	<body>
+  </head>
+  <body>
     <header>
       <nav class="navbar navbar-default" role="navigation">
         <div class="container">
@@ -329,26 +254,26 @@
     <script src="../js/bootstrap.js"></script>
     
     
-	<script>
-		$(document).ready(function(){
-	   //限制字符个数
-	   	$("p").each(function(){
-	       	var maxwidth=50;
-	       	if($(this).text().length>maxwidth){
-	           	$(this).text($(this).text().substring(0,maxwidth));
-	           	$(this).html($(this).html()+'...');
-	       	}
-	       	else if($(this).text().length<maxwidth){
-	       		var n = maxwidth+20-$(this).text().length;
-	       		var espaces= '';
-	       		for(var i=0;i<n;i++){
-	       			espaces += '&nbsp';
-	       		}
-	       		$(this).html($(this).html()+espaces);
-	       	}
-	   	});
-		});
-	</script>
+  <script>
+    $(document).ready(function(){
+     //限制字符个数
+      $("p").each(function(){
+          var maxwidth=50;
+          if($(this).text().length>maxwidth){
+              $(this).text($(this).text().substring(0,maxwidth));
+              $(this).html($(this).html()+'...');
+          }
+          else if($(this).text().length<maxwidth){
+            var n = maxwidth+20-$(this).text().length;
+            var espaces= '';
+            for(var i=0;i<n;i++){
+              espaces += '&nbsp';
+            }
+            $(this).html($(this).html()+espaces);
+          }
+      });
+    });
+  </script>
 
-	</body>
+  </body>
 </html>

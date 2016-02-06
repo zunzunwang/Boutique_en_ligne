@@ -137,8 +137,10 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	echo "<script language=\"javascript\">document.getElementById(\"produit_price\").innerHTML=\"Price: $row[price]€\";</script>";
 	echo "<script language=\"javascript\">document.getElementById(\"produit_type\").innerHTML=\"Type: $row[type]\";</script>";
 	echo "<script language=\"javascript\">document.getElementById(\"upload_username\").innerHTML=\"Upload by: $row[upload_username]\";</script>";
-	echo "<script language=\"javascript\">document.getElementById(\"upload_date\").innerHTML=\"Upload date: $row[upload_date]\";</script>";	
-	echo "<script language=\"javascript\">document.getElementById(\"produit_description\").innerHTML=\"Description: $row[description]\";</script>";
+	echo "<script language=\"javascript\">document.getElementById(\"upload_date\").innerHTML=\"Upload date: $row[upload_date]\";</script>";
+	$description=htmtocode($row[description]);
+	echo ($row[description]);
+	echo "<script language=\"javascript\">document.getElementById(\"produit_description\").innerHTML=\"Description:$description\";</script>";
 	/**
 	 * 处理每页显示的评论信息
 	 */
@@ -163,7 +165,8 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 			$comment_name=$div_name."_name";
 			echo "<script language=\"javascript\">document.getElementById(\"$comment_name\").innerHTML=\"$row[comment_username]:\";</script>";
 			$comment_description=$div_name."_description";
-			echo "<script language=\"javascript\">document.getElementById(\"$comment_description\").innerHTML=\"$row[comment_description]\";</script>";
+			$comment=htmtocode($row[comment_description]);
+			echo "<script language=\"javascript\">document.getElementById(\"$comment_description\").innerHTML=\"$comment\";</script>";
 			$comment_date=$div_name."_date";
 			echo "<script language=\"javascript\">document.getElementById(\"$comment_date\").innerHTML=\"$row[comment_date]&nbsp&nbsp&nbsp<button>reply</button>\";</script>";				
 			?>
