@@ -41,4 +41,9 @@ select{
   width:20% !important;
 }
 
+#style_description{
+	word-break:break-all;
+	word-wrap:break-word;
+}
+
 

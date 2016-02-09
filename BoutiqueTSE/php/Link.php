@@ -10,7 +10,7 @@ mysql_select_db("BoutiqueTSE",$link);
 
 
 function htmtocode($content) {
-	$content = str_replace("\n","<br>", str_replace(" ","&nbsp;", $content));
+	$content = str_replace("\n","<br>",str_replace("\r\n","<br>", str_replace(" ","&nbsp;", $content)));
 	return $content;
 }
 

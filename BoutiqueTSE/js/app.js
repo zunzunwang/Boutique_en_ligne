@@ -90,8 +90,8 @@ boutique.controller('imageChanged', ['$scope', function ($scope) {
 }]);
 
 boutique.controller('content',['$scope', function($scope){
-    $scope.allUsersContent = true;
-    $scope.quantityContent = false;
+    $scope.allUsersContent = false;
+    $scope.quantityContent = true;
     $scope.basketContent = true;
     $scope.publishContent = false;
     $scope.publishBDEContent = false;

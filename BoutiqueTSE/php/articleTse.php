@@ -25,7 +25,7 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 				$('#gestion_admin > a').attr('href',"../php/admin.php");
 				}		
 				</SCRIPT>
-			<?php
+		<?php
 				echo "<script language=\"javascript\">gestion_admin();</script>";
 			}
 	$username=$_COOKIE['cookie'];
@@ -138,9 +138,12 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	echo "<script language=\"javascript\">document.getElementById(\"produit_type\").innerHTML=\"Type: $row[type]\";</script>";
 	echo "<script language=\"javascript\">document.getElementById(\"upload_username\").innerHTML=\"Upload by: $row[upload_username]\";</script>";
 	echo "<script language=\"javascript\">document.getElementById(\"upload_date\").innerHTML=\"Upload date: $row[upload_date]\";</script>";
-	$description=htmtocode($row[description]);
-	echo ($row[description]);
-	echo "<script language=\"javascript\">document.getElementById(\"produit_description\").innerHTML=\"Description:$description\";</script>";
+	echo "<script language=\"javascript\">document.getElementById(\"produit_description\").innerHTML=\"Description:<br>$row[description]\";</script>";
+	?>
+	<script>
+	$('#produit_image').attr('src',"<?php echo "..\/upload_img\/".$row[img]?>");	 
+	</script>
+	<?php	
 	/**
 	 * 处理每页显示的评论信息
 	 */
@@ -165,8 +168,7 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 			$comment_name=$div_name."_name";
 			echo "<script language=\"javascript\">document.getElementById(\"$comment_name\").innerHTML=\"$row[comment_username]:\";</script>";
 			$comment_description=$div_name."_description";
-			$comment=htmtocode($row[comment_description]);
-			echo "<script language=\"javascript\">document.getElementById(\"$comment_description\").innerHTML=\"$comment\";</script>";
+			echo "<script language=\"javascript\">document.getElementById(\"$comment_description\").innerHTML=\"$row[comment_description]\";</script>";
 			$comment_date=$div_name."_date";
 			echo "<script language=\"javascript\">document.getElementById(\"$comment_date\").innerHTML=\"$row[comment_date]&nbsp&nbsp&nbsp<button>reply</button>\";</script>";				
 			?>

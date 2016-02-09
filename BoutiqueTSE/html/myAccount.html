@@ -86,8 +86,8 @@
         <div ng-show="basketContent">
         	<div class="row">
 	          <div id="produit1" class="col-sm-4 col-lg-4 col-md-4">
-	            <div class="thumbnail">
-	              <img src="http://placehold.it/320x150" alt=""/>
+	            <div id="produit1_bound">
+	              <img id="produit1_image"/>
 	              <div class="caption">
 	                <h4 id="produit1_price"></h4>
 	                <h4 class="nameProduit"><a id="produit1_name" href="#"></a></h4>
@@ -101,8 +101,8 @@
 	          </div>
 
 	          <div id="produit2" class="col-sm-4 col-lg-4 col-md-4">
-	            <div class="thumbnail">
-	              <img src="http://placehold.it/320x150" alt=""/>
+	            <div id="produit2_bound">
+	              <img id="produit2_image"/>
 	              <div class="caption">
 	                <h4 id="produit2_price"></h4>
 	                <h4  class="nameProduit"><a id="produit2_name" href="#"></a></h4>
@@ -116,8 +116,8 @@
 	          </div>
 	
 	          <div id="produit3" class="col-sm-4 col-lg-4 col-md-4">
-	            <div class="thumbnail">
-	              <img src="http://placehold.it/320x150" alt=""/>
+	            <div id="produit3_bound">
+	              <img id="produit3_image"/>
 	              <div class="caption">
 	                <h4 id="produit3_price"></h4>
 	                <h4  class="nameProduit"><a id="produit3_name" href="#"></a></h4>
@@ -131,8 +131,8 @@
 	          </div>
 	 
 	          <div id="produit4" class="col-sm-4 col-lg-4 col-md-4">
-	            <div class="thumbnail">
-	              <img src="http://placehold.it/320x150" alt=""/>
+	            <div id="produit4_bound">
+	              <img id="produit4_image"/>
 	              <div class="caption">
 	                <h4 id="produit4_price"></h4>
 	                <h4  class="nameProduit"><a id="produit4_name" href="#"></a></h4>
@@ -146,8 +146,8 @@
 	          </div>
 	
 	          <div id="produit5" class="col-sm-4 col-lg-4 col-md-4">
-	            <div class="thumbnail">
-	              <img src="http://placehold.it/320x150" alt=""/>
+	            <div id="produit5_bound">
+	              <img id="produit5_image"/>
 	              <div class="caption">
 	                <h4 id="produit5_price"></h4>
 	                <h4  class="nameProduit"><a id="produit5_name" href="#"></a></h4>
@@ -161,8 +161,8 @@
 	          </div>
 	          
 	          <div id="produit6" class="col-sm-4 col-lg-4 col-md-4">
-	            <div class="thumbnail">
-	              <img src="http://placehold.it/320x150" alt=""/>
+	            <div id="produit6_bound">
+	              <img id="produit6_image"/>
 	              <div class="caption">
 	                <h4 id="produit6_price"></h4>
 	                <h4  class="nameProduit"><a id="produit6_name" href="#"></a></h4>
@@ -176,8 +176,8 @@
 	          </div>
 	          
 	          <div id="produit7" class="col-sm-4 col-lg-4 col-md-4">
-	            <div class="thumbnail">
-	              <img src="http://placehold.it/320x150" alt=""/>
+	            <div id="produit7_bound">
+	              <img id="produit7_image"/>
 	              <div class="caption">
 	                <h4 id="produit7_price"></h4>
 	                <h4  class="nameProduit"><a id="produit7_name" href="#"></a></h4>
@@ -191,8 +191,8 @@
 	          </div>
 	          
 	          <div id="produit8" class="col-sm-4 col-lg-4 col-md-4">
-	            <div class="thumbnail">
-	              <img src="http://placehold.it/320x150" alt=""/>
+	            <div id="produit8_bound">
+	              <img id="produit8_image"/>
 	              <div class="caption">
 	                <h4 id="produit8_price"></h4>
 	                <h4  class="nameProduit"><a id="produit8_name" href="#"></a></h4>
@@ -206,8 +206,8 @@
 	          </div>
 	
 	          <div id="produit9" class="col-sm-4 col-lg-4 col-md-4">
-	            <div class="thumbnail">
-	              <img src="http://placehold.it/320x150" alt=""/>
+	            <div id="produit9_bound">
+	              <img id="produit9_image"/>
 	              <div class="caption">
 	                <h4 id="produit9_price"></h4>
 	                <h4  class="nameProduit"><a id="produit9_name" href="#"></a></h4>
@@ -249,8 +249,13 @@
         </div>
         
         <div ng-show="informationContent">
-          <span>这里是个人信息主页</span>
+        <ul>
+        <li class="list-group-item" id="user_name"></li>
+        <li class="list-group-item" id="user_grade"></li>
+        <li class="list-group-item" id="user_email"></li> 
+        </ul>                       
         </div>
+        
       </div>
 
 

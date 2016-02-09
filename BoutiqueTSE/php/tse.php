@@ -161,14 +161,13 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		 $produit_description=$div_name."_description";
 		 $description="There isn't any description.";
 		 $length=strlen($row[description]);
-		 //$description=htmtocode($row[description]);
-		 if($row[description]){
-		 		//$description=$row[description];		 		
-		 	//echo "<script language=\"javascript\">document.getElementById(\"$produit_description\").innerHTML=\"$row[description]\";</script>";
-		 }
-		 else{
-		 	//echo "<script language=\"javascript\">document.getElementById(\"$produit_description\").innerHTML=\"$description\";</script>";
-		 }
+// 		 if($row[description]){
+// 		 		//$description=$row[description];		 		
+// 		 	echo "<script language=\"javascript\">document.getElementById(\"$produit_description\").innerHTML=\"$description\";</script>";
+// 		 }
+// 		 else{
+// 		 	echo "<script language=\"javascript\">document.getElementById(\"$produit_description\").innerHTML=\"$description\";</script>";
+// 		 }
 		 $produit_upload_username=$div_name."_upload_username";
 		 echo "<script language=\"javascript\">document.getElementById(\"$produit_upload_username\").innerHTML=\"Up_user:$row[upload_username]\";</script>";
 		 $produit_upload_date=$div_name."_upload_date";

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8">
+    	<title>Sign IN</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <!-- Styles -->
+    	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="../css/Signin.css">
+    	
+    	<!--<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet"> -->
+
+	</head>
+  	<body background="../img/back.jpg">
+    	<div class="container">
+    		<div class="col-md-5 col-md-offset-1">
+    		<img src="../img/logo_tse.png">
+    		</div>
+            <!-- 利用onsubmit函数来执行javascript函数 javascript脚本来减少php的压力 提交表单的时候先执行 onsubmit后面的内容 -->
+    	  	<div class="col-md-6">
+    	  	<form class="form-signin" action="../php/signIn.php" method="post" name="signinform" onsubmit="return CheckSignin();">
+        		<h2 class="form-signin-heading">Please sign in</h2>
+        		<input type="text" name="username" placeholder="NAME.Surname">
+        		<input type="password" name="password" placeholder="Password">
+        		<label class="checkbox">
+          			<input type="checkbox" name="remember" value="on"> Remember me for a week
+       			</label>
+       			<a class="forget" href="../php/reset.php">Forget my password?</a>
+       			<a class="signup" href="../php/signUp.php">Sign up</a>
+        		<button id="signin" class="btn btn-primary" type="submit">Sign in</button>
+      		</form>
+      		</div>
+    	</div>
+    	<footer>
+    	 <p>
+    	 <a class="lien" href="http://www.telecom-st-etienne.fr/" target="_blank">T&#233;l&#233;com Saint-&#201;tienne</a>
+    	 &nbsp;|&nbsp;
+    	 <a class="lien" href="http://portail.univ-st-etienne.fr/" target="_blank">Universit&#233; Jean Monnet</a>
+    	 &nbsp;|&nbsp;
+    	 <span class="gray">&copy;2016 T&#233;l&#233;com Saint-&#201;tienne All Rights Reserved.</span>
+    	 </p>
+    	 </footer>
+	</body>
+</html>

@@ -112,6 +112,12 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	while($row=mysql_fetch_array($result)){
 		//在此填充每个单
 		$div_name ="produit$index";
+		$produit_bound=$div_name."_bound";
+		?>
+		<script>
+		$('<?php echo "#".$produit_bound; ?>').attr('class',"thumbnail");		 
+		</script>
+		<?php
 		$produit_name=$div_name."_name";
 		echo "<script language=\"javascript\">document.getElementById(\"$produit_name\").innerHTML=\"$row[produit_name]\";</script>";
 		?>
@@ -140,6 +146,14 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		echo "<script language=\"javascript\">document.getElementById(\"$produit_order_date\").innerHTML=\"Date:$row[order_date]\";</script>";
 		$produit_order_id=$div_name."_order_id";
 		echo "<script language=\"javascript\">document.getElementById(\"$produit_order_id\").innerHTML=\"your order id:$row[id]\";</script>";
+		$produit_image=$div_name."_image";
+		?>
+		<script>
+		$('<?php echo "#".$produit_image; ?>').attr('src',"<?php echo "..\/upload_img\/".$row[produit_img]?>");
+		$('<?php echo "#".$produit_image; ?>').attr('width',"350px");
+		$('<?php echo "#".$produit_image; ?>').attr('height',"150px");		 
+		</script>
+		<?php
 		$produit_delete=$div_name."_delete";
 		echo "<script language=\"javascript\">document.getElementById(\"$produit_delete\").innerHTML=\"<button>Delete</button>\";</script>";
 		?>
@@ -154,9 +168,14 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	//$('button').attr('type',"submit");					 
 	</script>
 	<?php
+	$result_user=mysql_query("SELECT * FROM `UserList` WHERE `username` = '$username'");
+	while($row_user=mysql_fetch_array($result_user)){
+		echo "<script language=\"javascript\">document.getElementById(\"user_name\").innerHTML=\"User name: $row_user[username]\";</script>";
+		echo "<script language=\"javascript\">document.getElementById(\"user_grade\").innerHTML=\"User grade: $row_user[grade]\";</script>";
+		echo "<script language=\"javascript\">document.getElementById(\"user_email\").innerHTML=\"User email: $row_user[email]\";</script>";		
+	}
 	
-//	include("../php/uploadTse.php");
-
+	
 	
 	
 	
@@ -170,6 +189,12 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	 	if (Uploadform.name.value=="")
 	 	{
 	 		alert("please write your product name.");
+	 		Uploadform.name.focus();
+	 		return false;
+	 	}
+	 	if (Uploadform.name.value.length>15)
+	 	{
+	 		alert("the title can't more than 15 words.");
 	 		Uploadform.name.focus();
 	 		return false;
 	 	}

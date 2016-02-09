@@ -20,13 +20,13 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		$gestioin_admin="<a>ADMIN</a>";
 		echo "<script language=\"javascript\">document.getElementById(\"gestion_admin\").innerHTML=\"$gestioin_admin\";</script>";
 		?>
-				<SCRIPT language = javascript>
-				function gestion_admin(){
-				$('#gestion_admin > a').attr('class',"page-scroll");
-				$('#gestion_admin > a').attr('href',"../php/admin.php");
-				}		
-				</SCRIPT>
-			<?php
+		<SCRIPT language = javascript>
+		function gestion_admin(){
+		$('#gestion_admin > a').attr('class',"page-scroll");
+		$('#gestion_admin > a').attr('href',"../php/admin.php");
+		}		
+		</SCRIPT>
+		<?php
 				echo "<script language=\"javascript\">gestion_admin();</script>";
 			}
 	$username=$_COOKIE['cookie'];
@@ -69,7 +69,11 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	echo "<script language=\"javascript\">document.getElementById(\"produit_name\").innerHTML=\"$row[name]\";</script>";
 	echo "<script language=\"javascript\">document.getElementById(\"produit_price\").innerHTML=\"Price: $row[price]€\";</script>";
 	echo "<script language=\"javascript\">document.getElementById(\"produit_description\").innerHTML=\"Description: $row[description]\";</script>";
-	
+	?>
+	<script>
+	$('#produit_image').attr('src',"<?php echo "..\/upload_img\/".$row[img]?>");	 
+	</script>
+	<?php		
 	if($_POST[size1])
 		$produit_size=$_POST[size1];
 	if($_POST[size2])
@@ -93,11 +97,11 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		$username=$_COOKIE['cookie'];
 		if($_POST[produit_quantity]=="other"){
 			$description_escape=mysql_real_escape_string($row[description]);
-			$result=mysql_query("INSERT INTO `Order_list` (`id`, `produit_id`, `produit_name`, `produit_description`, `produit_price`, `produit_type`, `produit_size`, `produit_color`, `produit_quantity`, `user_name`, `order_date`, `pay`) VALUES (NULL, '$row[id]', '$row[name]','$description_escape','$row[price]', '$row[type]', '$produit_size', '$produit_color', '$_POST[value_own_quality]', '$username', CURRENT_TIMESTAMP, '0')");
+			$result=mysql_query("INSERT INTO `Order_list` (`id`, `produit_id`, `produit_name`, `produit_img`, `produit_description`, `produit_price`, `produit_type`, `produit_size`, `produit_color`, `produit_quantity`, `user_name`, `order_date`, `pay`) VALUES (NULL, '$row[id]', '$row[name]','$row[img]','$description_escape','$row[price]', '$row[type]', '$produit_size', '$produit_color', '$_POST[value_own_quality]', '$username', CURRENT_TIMESTAMP, '0')");
 		}
 		else {
 			$description_escape=mysql_real_escape_string($row[description]);				
-			$result=mysql_query("INSERT INTO `Order_list` (`id`, `produit_id`, `produit_name`, `produit_description`, `produit_price`, `produit_type`, `produit_size`, `produit_color`, `produit_quantity`, `user_name`, `order_date`, `pay`) VALUES (NULL, '$row[id]', '$row[name]','$description_escape','$row[price]', '$row[type]', '$produit_size', '$produit_color', '$_POST[produit_quantity]', '$username', CURRENT_TIMESTAMP, '0')");
+			$result=mysql_query("INSERT INTO `Order_list` (`id`, `produit_id`, `produit_name`, `produit_img`, `produit_description`, `produit_price`, `produit_type`, `produit_size`, `produit_color`, `produit_quantity`, `user_name`, `order_date`, `pay`) VALUES (NULL, '$row[id]', '$row[name]','$row[img]','$description_escape','$row[price]', '$row[type]', '$produit_size', '$produit_color', '$_POST[produit_quantity]', '$username', CURRENT_TIMESTAMP, '0')");
 		}
 // 		echo $a=mysql_error();
 // 		echo "<script language=\"javascript\">alert(\"$a\");</script>";
