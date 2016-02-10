@@ -78,10 +78,10 @@ $uptypes=array(
 
  	$pinfo=pathinfo($destination);
  	$fname=$pinfo[basename];
- 	echo " <font color=red>已经成功上传</font><br>文件名:  <font color=blue>".$destination_folder.$fname."</font><br>";
- 	echo " 宽度:".$image_size[0];
- 	echo " 长度:".$image_size[1];
- 	echo "<br> 大小:".$file["size"]." bytes";
+ 	echo " <font color=red>success</font><br>name:  <font color=blue>".$destination_folder.$fname."</font><br>";
+ 	echo " width:".$image_size[0];
+ 	echo " length:".$image_size[1];
+ 	echo "<br> size:".$file["size"]." bytes";
 
  	if($watermark==1)
  	{
@@ -150,9 +150,9 @@ $uptypes=array(
 
 	if($imgpreview==1)
 	{
-		echo "<br>图片预览:<br>";
+		echo "<br>image prévu:<br>";
 		echo "<img src=\"".$destination."\" width=".($image_size[0]*$imgpreviewsize)." height=".($image_size[1]*$imgpreviewsize);
-		echo " alt=\"图片预览:\r文件名:".$destination."\r上传时间:\">";
+		echo " alt=\"image prévu:\rname:".$destination."\rupload_time:\">";
 	}
 	
 }
@@ -164,7 +164,6 @@ if($_POST['submit']){
 	$add_query="INSERT INTO `Tse_produit_list` (`id`, `name`, `type`, `price`, `description`, `img`, `upload_username`, `upload_date`) VALUES (NULL, '$_POST[name]', '$_POST[type]', '$_POST[price]', '$description', '$fname', '$username', CURRENT_TIMESTAMP)";
 	mysql_query($add_query);
 	$error=mysql_error();
-//	echo "<script language=\"javascript\">alert('you have added a new product');location.href='../php/myAccount.php';</script>";
 	
  }
 

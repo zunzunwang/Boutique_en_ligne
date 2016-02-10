@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Boutique">
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Boutique en Ligne</title>
+    <script src="../js/angular.js"></script>
+    <script src="../js/angular-ui-bootstrap.js"></script>
+    <script src="../js/angular-ui-route.js"></script>
+    <script src="../js/app.js"></script>
+    <script type="../js/animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/tse.css">
+
+	</head>
+	<body>
+  <header>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="../php/tse.php">Welcome to OS of TSE</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="../php/bde.php">Online Store of BDE</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                <li id="gestion_admin">
+         
+                </li>
+                <li>
+                  <a href="../php/myAccount.php">MY_ACCOUNT</a>    
+                </li>
+                <li>
+                  <a href="../php/index.php#contact">CONTACT_US</a>    
+                </li>
+                <li>
+                  <a href="?out=out">LOGOUT</a>    
+                </li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+      
+    </header>
+
+<div class="contentBody">
+    <div class="row">
+      <div class="col-md-6">
+        <a href="index.html"><img id="marque" src="../img/marque.png"></a>
+      </div>
+      <div class="col-md-6">
+        <!-- <fieldset id="rechercher">
+              <input type="text" id="search" placeholder="Search" value="" class="placeholder">
+              <button type="submit" id="searchButton" class="btn btn-primary">Search</button>
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </fieldset> -->
+<!--         <select id="filtre">
+          <option value="fi1">--------All--------</option>
+          <option value="fi2">Today</option>
+          <option value="fi3">Within a week</option>
+          <option value="fi3">Within a month</option>
+        </select> -->
+
+      </div>
+    </div>
+
+    <div id="total"   ng-controller="showHide">
+<!-- ////////////////////////////////////////start of the second control/////////////////////////////////////////// -->
+      <div id="headImg" ng-controller="imageChanged" ng-show="slidesLooping">
+      
+        <div id="imgLoop">
+        
+          <carousel interval="myInterval" no-wrap="noWrapSlides" >
+            <slide ng-repeat="slide in slides" active="slide.active">
+              <img ng-src="{{slide.image}}" style="margin:auto;">
+              <div class="carousel-caption">
+                <p>{{slide.text}}</p>
+              </div>
+            </slide>
+          </carousel>
+
+        </div> 
+    
+      </div>
+
+      <div id="annexe" style='background:{{backgroundColor}}'>
+        <pre id="date">Today is: <em>{{dt | date:'fullDate' }}</em></pre>
+        <img id="hide" type="button" src="../img/hide.png" ng-show="hideImg" ng-click="hide()" />
+        <img id="show" type="button" src="../img/show.png" ng-show="showImg" ng-click="show()" />
+        <!-- <img id="backgroundColor" type="button" src="img/bg.png" ng-click="backcolor()" ng-dblclick="returnWhite()"/> -->
+        <br/>
+      </div>
+      
+
+
+
+      <hr style="border:1px solid black;" />
+    </div>
+
+    <div class="row">
+      
+      <div class="col-md-3">
+        <div class="list-group">
+          <a class="list-group-item active">
+            <h3 class="list-group-item-heading">Item List</h3>
+          </a>
+          <a href="../php/tse.php?type=All" class="list-group-item">
+            <h4>All</h4>
+            <p class="list-group-item-text">All products</p>
+          </a>
+           <a href='../php/tse.php?type=Clothes' class="list-group-item">
+            <h4>Clothes</h4>
+            <p class="list-group-item-text">Vêtements,Chaussures,Sport...</p>
+          </a>
+           <a href='../php/tse.php?type=Appliances' class="list-group-item">
+            <h4>Appliances</h4>
+            <p class="list-group-item-text">Computer,Printer,Camera...</p>           
+          </a>
+           <a href='../php/tse.php?type=Furnitures' class="list-group-item">
+            <h4>Furnitures</h4>
+            <p class="list-group-item-text">Ameublement,Electroménager...</p>
+          </a>
+           <a href='../php/tse.php?type=Residences' class="list-group-item">
+            <h4>Residences</h4>
+            <p class="list-group-item-text">Locations...</p>
+          </a>
+        
+      </div>
+    </div>
+
+      <div class="col-md-9">
+        <div class="row">
+          <div id="produit1" class="col-sm-4 col-lg-4 col-md-4">
+            <div  id="produit1_bound">
+              <img id="produit1_image" width="350px" height="150px"/>
+              <div class="caption">
+                <h4 id="produit1_price"></h4>
+                <h4 class="nameProduit"><a id="produit1_name" href="#"></a></h4>
+                <p id = "produit1_description"></p>
+                <h6 id = "produit1_upload_username"></h6>
+                <h6 id = "produit1_upload_date"></h6>
+              </div>
+            </div>
+          </div>
+          
+
+          <div id="produit2" class="col-sm-4 col-lg-4 col-md-4">
+            <div id="produit2_bound">
+              <img id="produit2_image" width="350px" height="150px"/>
+              <div class="caption">
+                <h4 id="produit2_price"></h4>
+                <h4  class="nameProduit"><a id="produit2_name" href="#"></a></h4>
+                <p id = "produit2_description"></p>
+                <h6 id = "produit2_upload_username"></h6>
+                <h6 id = "produit2_upload_date"></h6>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit3" class="col-sm-4 col-lg-4 col-md-4">
+            <div id="produit3_bound">
+              <img id="produit3_image" width="350" height="150"/>
+              <div class="caption">
+                <h4 id="produit3_price"></h4>
+                <h4  class="nameProduit"><a id="produit3_name" href="#"></a></h4>
+                <p id = "produit3_description"></p>
+                <h6 id = "produit3_upload_username"></h6>
+                <h6 id = "produit3_upload_date"></h6>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit4" class="col-sm-4 col-lg-4 col-md-4">
+            <div id="produit4_bound">
+              <img id="produit4_image" width="320" height="150"/>
+              <div class="caption">
+                <h4 id="produit4_price"></h4>
+                <h4  class="nameProduit"><a id="produit4_name" href="#"></a></h4>
+                <p id = "produit4_description"></p>
+                <h6 id = "produit4_upload_username"></h6>
+                <h6 id = "produit4_upload_date"></h6>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit5" class="col-sm-4 col-lg-4 col-md-4">
+            <div id="produit5_bound">
+              <img id="produit5_image" width="320" height="150"/>
+              <div class="caption">
+                <h4 id="produit5_price"></h4>
+                <h4  class="nameProduit"><a id="produit5_name" href="#"></a></h4>
+                <p id = "produit5_description"></p>
+                <h6 id = "produit5_upload_username"></h6>
+                <h6 id = "produit5_upload_date"></h6>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit6" class="col-sm-4 col-lg-4 col-md-4">
+            <div id="produit6_bound">
+              <img id="produit6_image" width="320" height="150"/>
+              <div class="caption">
+                <h4 id="produit6_price"></h4>
+                <h4  class="nameProduit"><a id="produit6_name" href="#"></a></h4>
+                <p id = "produit6_description"></p>
+                <h6 id = "produit6_upload_username"></h6>
+                <h6 id = "produit6_upload_date"></h6>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit7" class="col-sm-4 col-lg-4 col-md-4">
+            <div id="produit7_bound">
+              <img id="produit7_image" width="320" height="150"/>
+              <div class="caption">
+                <h4 id="produit7_price"></h4>
+                <h4  class="nameProduit"><a id="produit7_name" href="#"></a></h4>
+                <p id = "produit7_description"></p>
+                <h6 id = "produit7_upload_username"></h6>
+                <h6 id = "produit7_upload_date"></h6>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit8" class="col-sm-4 col-lg-4 col-md-4">
+            <div id="produit8_bound">
+              <img id="produit8_image" width="320" height="150"/>
+              <div class="caption">
+                <h4 id="produit8_price"></h4>
+                <h4  class="nameProduit"><a id="produit8_name" href="#"></a></h4>
+                <p id = "produit8_description"></p>
+                <h6 id = "produit8_upload_username"></h6>
+                <h6 id = "produit8_upload_date"></h6>
+              </div>
+            </div>
+          </div>
+
+          <div id="produit9" class="col-sm-4 col-lg-4 col-md-4">
+            <div id="produit9_bound">
+              <img id="produit9_image" width="320" height="150"/>
+              <div class="caption">
+                <h4 id="produit9_price"></h4>
+                <h4  class="nameProduit"><a id="produit9_name" href="#"></a></h4>
+                <p id = "produit9_description"></p>
+                <h6 id = "produit9_upload_username"></h6>
+                <h6 id = "produit9_upload_date"></h6>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <nav>
+      <div id = "pager_records"></div>
+      <div id = "pager_select"></div>
+    </nav>
+
+</div>
+    <hr style="border:1px solid black;" />
+    
+    <footer>
+      <div>      
+        <span>copyright &copy;2016 <b><a href="http://www.telecom-st-etienne.fr/">TELECOM SAINT-ETIENNE</a></b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All rights reserved.</span>
+      </div>
+    </footer>
+        <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.js"></script>
+    <script>
+		$(document).ready(function(){
+	   //限制字符个数
+	   	$("p").each(function(){
+	       	var maxwidth=50;
+	       	if($(this).text().length>maxwidth){
+	           	$(this).text($(this).text().substring(0,maxwidth));
+	           	$(this).html($(this).html()+'...');
+	       	}
+	       	else if($(this).text().length<maxwidth){
+	       		var n = maxwidth+20-$(this).text().length;
+	       		var espaces= '';
+	       		for(var i=0;i<n;i++){
+	       			espaces += '&nbsp';
+	       		}
+	       		$(this).html($(this).html()+espaces);
+	       	}
+	   	});
+		});
+	</script>
+
+	</body>
+</html>

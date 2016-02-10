@@ -13,7 +13,6 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	include("Link.php");
 	include("../html/myAccount.html");
 	if($_COOKIE['cookie']=="admin"){
-		//$gestioin_admin="<a class=\"page-scroll\" href=\"../php/admin.php\">admin</a>";
 		$gestioin_admin="<a>ADMIN</a>";
 		echo "<script language=\"javascript\">document.getElementById(\"gestion_admin\").innerHTML=\"$gestioin_admin\";</script>";
 		?>
@@ -162,24 +161,13 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 
 		$index += 1;
 	}
-	?>
-	<script>
-	$('button').attr('class',"btn btn-primary");
-	//$('button').attr('type',"submit");					 
-	</script>
-	<?php
+
 	$result_user=mysql_query("SELECT * FROM `UserList` WHERE `username` = '$username'");
 	while($row_user=mysql_fetch_array($result_user)){
 		echo "<script language=\"javascript\">document.getElementById(\"user_name\").innerHTML=\"User name: $row_user[username]\";</script>";
 		echo "<script language=\"javascript\">document.getElementById(\"user_grade\").innerHTML=\"User grade: $row_user[grade]\";</script>";
 		echo "<script language=\"javascript\">document.getElementById(\"user_email\").innerHTML=\"User email: $row_user[email]\";</script>";		
 	}
-	
-	
-	
-	
-	
-		
 
 }
 

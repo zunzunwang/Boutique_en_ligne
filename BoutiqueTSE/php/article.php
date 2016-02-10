@@ -16,7 +16,6 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	 * gestion_admin
 	 */
 	if($_COOKIE['cookie']=="admin"){
-		//$gestioin_admin="<a class=\"page-scroll\" href=\"../php/admin.php\">admin</a>";
 		$gestioin_admin="<a>ADMIN</a>";
 		echo "<script language=\"javascript\">document.getElementById(\"gestion_admin\").innerHTML=\"$gestioin_admin\";</script>";
 		?>
@@ -103,8 +102,7 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 			$description_escape=mysql_real_escape_string($row[description]);				
 			$result=mysql_query("INSERT INTO `Order_list` (`id`, `produit_id`, `produit_name`, `produit_img`, `produit_description`, `produit_price`, `produit_type`, `produit_size`, `produit_color`, `produit_quantity`, `user_name`, `order_date`, `pay`) VALUES (NULL, '$row[id]', '$row[name]','$row[img]','$description_escape','$row[price]', '$row[type]', '$produit_size', '$produit_color', '$_POST[produit_quantity]', '$username', CURRENT_TIMESTAMP, '0')");
 		}
-// 		echo $a=mysql_error();
-// 		echo "<script language=\"javascript\">alert(\"$a\");</script>";
+
 		echo "<script language=\"javascript\">alert(\"Thanks for your order.\");</script>";		
 		$url_myAccount="../php/myAccount.php";
 		echo "<SCRIPT LANGUAGE=\"JavaScript\">location.href='$url_myAccount'</SCRIPT>";

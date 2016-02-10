@@ -14,7 +14,6 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	include("Link.php");
 	include("../html/index.html");
 	if($_COOKIE['cookie']=="admin"){
-		//$gestioin_admin="<a class=\"page-scroll\" href=\"../php/admin.php\">admin</a>";
 		$gestioin_admin="<a>admin</a>";	
 		echo "<script language=\"javascript\">document.getElementById(\"gestion_admin\").innerHTML=\"$gestioin_admin\";</script>";
 		?>

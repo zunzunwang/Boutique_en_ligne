@@ -42,6 +42,10 @@ alert(test);
 
 echo "<SCRIPT>CheckSignin();</SCRIPT>";
 
+echo "<script language=\"javascript\">window.open('./allrecords.php', 'newwindow', 'height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no')</script>";
+echo "<script language=\"javascript\">alert('aaaaa');</script>";
+
+
 ?>
 
 

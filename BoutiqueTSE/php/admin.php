@@ -13,17 +13,16 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	include("Link.php");
 	include("../html/admin.html");
 	if($_COOKIE['cookie']=="admin"){
-		//$gestioin_admin="<a class=\"page-scroll\" href=\"../php/admin.php\">admin</a>";
 		$gestioin_admin="<a>ADMIN</a>";
 		echo "<script language=\"javascript\">document.getElementById(\"gestion_admin\").innerHTML=\"$gestioin_admin\";</script>";
 		?>
-						<SCRIPT language = javascript>
-						function gestion_admin(){
-						$('#gestion_admin > a').attr('class',"page-scroll");
-						$('#gestion_admin > a').attr('href',"../php/admin.php");
-						}		
-						</SCRIPT>
-					<?php
+		<SCRIPT language = javascript>
+	    function gestion_admin(){
+		$('#gestion_admin > a').attr('class',"page-scroll");
+		$('#gestion_admin > a').attr('href',"../php/admin.php");
+		}		
+		</SCRIPT>
+		<?php
 						echo "<script language=\"javascript\">gestion_admin();</script>";
 					}
 	$username=$_COOKIE['cookie'];
@@ -165,29 +164,21 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	_PAGEFT($total, 10);
 	$result = mysql_query("SELECT * FROM `UserList` limit $firstcount, $displaypg ");
 	$index=1;
-	// 	$result=mysql_query("SELECT `username` FROM `UserList`");
 	while($row = mysql_fetch_array($result))
 	{
-		//  		echo "<script language=\"javascript\">document.getElementById(\"user\").innerHTML=\"$row[username]\";</script>";
-		//  		echo $row['username'];
-		//  		echo "<br />";
 		$user_name = "user$index";
 		$user_div = $user_name."div";
 		$user_email = "email$index";
 		$user_delete ="delete$index";
-		//  		$user_name=$div_name."_name";
 		echo "<script language=\"javascript\">document.getElementById(\"$user_name\").innerHTML=\"$row[username]\";</script>";
 		echo "<script language=\"javascript\">document.getElementById(\"$user_email\").innerHTML=\"$row[email]\";</script>";
 		echo "<script language=\"javascript\">document.getElementById(\"$user_delete\").innerHTML=\"<span></span>\";</script>";
 		
-		//  		echo "<script language=\"javascript\">document.getElementById(\"user\").innerHTML=\"$row[username]\";</script>";
 		?>
 		<script>
 		$('<?php echo "#".$user_div?>').attr('class',"row well well-sm");
 		$('<?php echo "#".$user_delete." > span"?>').attr('onclick',"user_delete(<?php echo $row[id] ?>)");
-		$('<?php echo "#".$user_delete." > span"?>').attr('class',"glyphicon glyphicon-remove pull-right");
-
-		
+		$('<?php echo "#".$user_delete." > span"?>').attr('class',"glyphicon glyphicon-remove pull-right");		
 		</script>
 		<?php
 		$index+=1;
@@ -209,7 +200,8 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		$produit_div = "produit$index_quantity";
 		$produit_bound = $produit_div."_bound";
 		$produit_name = $produit_div."_name";
-		$produit_quantity = $produit_div."_quantity";		
+		$produit_quantity = $produit_div."_quantity";
+		$produit_all_records = $produit_div."_all_records";		
 		echo "<script language=\"javascript\">document.getElementById(\"$produit_name\").innerHTML=\"$row_quantity[name]\";</script>";
 		$request=mysql_query("SELECT * FROM `Order_list` WHERE `produit_name` = \"$row_quantity[name]\" ");
 		while($request_quantity = mysql_fetch_array($request)){
@@ -219,12 +211,17 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		$amount = $quantity*$row_quantity[price];
 		$produit_amount=$produit_div."_amount";
 		echo "<script language=\"javascript\">document.getElementById(\"$produit_amount\").innerHTML=\"Amount (€): $amount \";</script>";
-		
+		echo "<script language=\"javascript\">document.getElementById(\"$produit_all_records\").innerHTML=\"all records\";</script>";
 		
 		
 		?>
 		<script>
 		$('<?php echo "#".$produit_bound?>').attr('class',"row well well-sm");
+//		$('<?php echo "#".$produit_all_records." > span"?>').attr('onclick',"allrecords(<?php echo $row_quantity[id] ?>)");
+		$('<?php echo "#".$produit_all_records?>').attr('href',"../php/allrecords?id=<?php echo $row_quantity[id] ?>");
+		$('<?php echo "#".$produit_all_records." > span"?>').attr('class',"pull-right");
+	
+		
 		</script>
 		<?php
 		$index_quantity+=1;

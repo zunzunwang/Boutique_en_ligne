@@ -19,6 +19,12 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                 <a id="label_username" class="navbar-brand"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,7 +59,7 @@
 <div class="contentBody">
     <div class="row">
       <div class="col-md-6">
-        <a href="index.html"><img id="marque" src="../img/marque.png"></a>
+        <a href="../php/index.php"><img id="marque" src="../img/marque.png"></a>
       </div>
       <div class="col-md-6">
       </div>
@@ -234,122 +240,152 @@
         <div ng-show="quantityContent">
 
         	<div id="produit1_bound">
-        		<div class="col-md-4">
+        		<div class="col-md-3">
         			<h6 id="produit1_name"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit1_quantity"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit1_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+                   	<h6><a id="produit1_all_records"></a></h6>
           		</div>
           	</div>
           	
         	<div id="produit2_bound">
-        		<div class="col-md-4">
+        		<div class="col-md-3">
         			<h6 id="produit2_name"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit2_quantity"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit2_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit2_all_records"></a></h6>
           		</div>
           	</div>
 
         	<div id="produit3_bound">
-        		<div class="col-md-4">
+        		<div class="col-md-3">
         			<h6 id="produit3_name"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit3_quantity"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit3_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit3_all_records"></a></h6>
           		</div>
           	</div>
           	
           	<div id="produit4_bound">
-        		<div class="col-md-4">
+        		<div class="col-md-3">
         			<h6 id="produit4_name"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit4_quantity"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit4_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit4_all_records"></a></h6>
           		</div>
           	</div>
           	
           	<div id="produit5_bound">
-        		<div class="col-md-4">
+        		<div class="col-md-3">
         			<h6 id="produit5_name"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit5_quantity"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit5_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit5_all_records"></a></h6>
           		</div>
           	</div>
           	
           	<div id="produit6_bound">
-        		<div class="col-md-4">
+        		<div class="col-md-3">
         			<h6 id="produit6_name"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit6_quantity"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit6_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit6_all_records"></a></h6>
           		</div>
           	</div>
           	
           	<div id="produit7_bound">
-        		<div class="col-md-4">
+        		<div class="col-md-3">
         			<h6 id="produit7_name"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit7_quantity"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit7_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit7_all_records"></a></h6>
           		</div>
           	</div>
           	
           	<div id="produit8_bound">
-        		<div class="col-md-4">
+        		<div class="col-md-3">
         			<h6 id="produit8_name"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit8_quantity"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit8_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit8_all_records"></a></h6>
           		</div>
           	</div>
           	
           	<div id="produit9_bound">
-        		<div class="col-md-4">
+        		<div class="col-md-3">
         			<h6 id="produit9_name"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit9_quantity"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit9_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit9_all_records"></a></h6>
           		</div>
           	</div>
           	
           	<div id="produit10_bound">
-        		<div class="col-md-4">
+        		<div class="col-md-3">
         			<h6 id="produit10_name"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit10_quantity"></h6>
           		</div>
-          		<div class="col-md-4">
+          		<div class="col-md-3">
           			<h6 id="produit10_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit10_all_records"></a></h6>
           		</div>
           	</div>
         	
@@ -486,6 +522,31 @@
     	});
     	
 	});
+	</script>
+	<script>	
+	function allrecords(id){
+		//alert("aaa");
+		var xmlhttp;
+		if (window.XMLHttpRequest)
+		  {// code for IE7+, Firefox, Chrome, Opera, Safari
+		  xmlhttp=new XMLHttpRequest();
+		  }
+		  else
+		  {// code for IE6, IE5
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		  xmlhttp.onreadystatechange=function()
+		  {
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		    {
+			 // alert("you have deleted this user.");
+	
+//			  location.href='../php/admin.php';   	    
+		    }
+		  }
+		xmlhttp.open("GET","../php/allrecords.php?id="+id,true);
+		xmlhttp.send();
+	}
 	</script>
 
 	</body>

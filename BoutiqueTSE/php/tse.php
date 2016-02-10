@@ -16,7 +16,6 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	 * gestion_admin
 	 */
 	if($_COOKIE['cookie']=="admin"){
-		//$gestioin_admin="<a class=\"page-scroll\" href=\"../php/admin.php\">admin</a>";
 		$gestioin_admin="<a>ADMIN</a>";
 		echo "<script language=\"javascript\">document.getElementById(\"gestion_admin\").innerHTML=\"$gestioin_admin\";</script>";
 		?>
@@ -126,10 +125,8 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	//调用pageft()，每页显示12条信息（使用默认的20时，可以省略此参数），使用本页URL（默认，所以省略掉）。
 	_PAGEFT($total,9);
 	
-//	echo $pagenav;
-//	echo "<script language=\"javascript\">document.getElementById(\"pager_records\").innerHTML=\"$pagenav\";</script>";
+
 	//  用于显示填充的部分	
-//	$result=mysql_query("SELECT * FROM `Tse_produit_list` limit $firstcount,$displaypg ");
 	$index=1;
 	if($type!="All"){
 		$result=mysql_query("SELECT * FROM `Tse_produit_list` WHERE `type` = \"$type\" limit $firstcount,$displaypg;");
@@ -161,19 +158,11 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		 $produit_description=$div_name."_description";
 		 $description="There isn't any description.";
 		 $length=strlen($row[description]);
-// 		 if($row[description]){
-// 		 		//$description=$row[description];		 		
-// 		 	echo "<script language=\"javascript\">document.getElementById(\"$produit_description\").innerHTML=\"$description\";</script>";
-// 		 }
-// 		 else{
-// 		 	echo "<script language=\"javascript\">document.getElementById(\"$produit_description\").innerHTML=\"$description\";</script>";
-// 		 }
 		 $produit_upload_username=$div_name."_upload_username";
 		 echo "<script language=\"javascript\">document.getElementById(\"$produit_upload_username\").innerHTML=\"Up_user:$row[upload_username]\";</script>";
 		 $produit_upload_date=$div_name."_upload_date";
 		 echo "<script language=\"javascript\">document.getElementById(\"$produit_upload_date\").innerHTML=\"Date:$row[upload_date]\";</script>";
  		 $produit_image=$div_name."_image";
-		// $image_size = getimagesize($row[img]);
 		 ?>
  		 <script>
 		 $('<?php echo "#".$produit_image; ?>').attr('src',"<?php echo "..\/upload_img\/".$row[img]?>");	 

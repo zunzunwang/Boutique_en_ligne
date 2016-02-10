@@ -78,10 +78,10 @@ $uptypes=array(
 
  	$pinfo=pathinfo($destination);
  	$fname=$pinfo[basename];
- 	echo " <font color=red>已经成功上传</font><br>文件名:  <font color=blue>".$destination_folder.$fname."</font><br>";
- 	echo " 宽度:".$image_size[0];
- 	echo " 长度:".$image_size[1];
- 	echo "<br> 大小:".$file["size"]." bytes";
+ 	echo " <font color=red>success</font><br>name:  <font color=blue>".$destination_folder.$fname."</font><br>";
+ 	echo " width:".$image_size[0];
+ 	echo " length:".$image_size[1];
+ 	echo "<br> size:".$file["size"]." bytes";
 
  	if($watermark==1)
  	{
@@ -150,9 +150,9 @@ $uptypes=array(
 
 	if($imgpreview==1)
 	{
-		echo "<br>图片预览:<br>";
+		echo "<br>image prévu:<br>";
 		echo "<img src=\"".$destination."\" width=".($image_size[0]*$imgpreviewsize)." height=".($image_size[1]*$imgpreviewsize);
-		echo " alt=\"图片预览:\r文件名:".$destination."\r上传时间:\">";
+		echo " alt=\"image prévu:\rname:".$destination."\rupload_time:\">";
 	}
 	
 }

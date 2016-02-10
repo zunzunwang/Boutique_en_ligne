@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Boutique">
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Boutique en Ligne</title>
+    <script src="../js/angular.js"></script>
+    <script src="../js/angular-ui-bootstrap.js"></script>
+    <script src="../js/angular-ui-route.js"></script>
+    <script src="../js/app.js"></script>
+    <script type="../js/animation.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+	</head>
+  
+	<body  ng-controller="content">
+    <header>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="label_username" class="navbar-brand"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li>
+                  <a href="../php/tse.php">Online Store of TSE</a>
+                </li>
+                <li>
+                  <a href="../php/bde.php">Online Store of BDE</a>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li id="gestion_admin">
+         
+                </li>
+                <li>
+                  <a href="../php/myAccount.php">MY_ACCOUNT</a>    
+                </li>
+                <li>
+                  <a href="../php/index.php#contact">CONTACT_US</a>    
+                </li>
+                <li>
+                  <a href="?out=out">LOGOUT</a>    
+                </li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+      
+    </header>
+<div class="contentBody">
+    <div class="row">
+      <div class="col-md-6">
+        <a href="../php/index.php"><img id="marque" src="../img/marque.png"></a>
+      </div>
+      <div class="col-md-6">
+      </div>
+    </div>
+
+    <div class="row">
+      
+      <div class="col-md-3">
+        <div class="list-group">
+          <a class="list-group-item active">
+            <h3 class="list-group-item-heading">Item List</h3>
+          </a>
+          <a href="#" class="list-group-item" ng-click="allUsers()">
+            <h4>All Users</h4>
+          </a>
+          <a href="#" class="list-group-item" ng-click="publishBDE()">
+            <h4>Release new products</h4>
+          </a>
+          <a href="#" class="list-group-item" ng-click="quantity()">
+            <h4>Quantity</h4>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <!-- 显示 -->
+        <div ng-show="allUsersContent">
+        
+        	<div id="user1div">
+          		<div class="col-md-4">
+          			<h6 id="user1"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email1"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete1"></a></h6>
+          		</div>
+            </div>
+            
+            <div id="user2div">
+          		<div class="col-md-4">
+          			<h6 id="user2"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email2"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete2"></a></h6>
+          		</div>
+          	</div>
+          	<div id="user3div">
+          		<div class="col-md-4">
+          			<h6 id="user3"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email3"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete3"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="user4div">
+          		<div class="col-md-4">
+          			<h6 id="user4"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email4"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete4"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="user5div">
+          		<div class="col-md-4">
+          			<h6 id="user5"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email5"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete5"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="user6div">
+          		<div class="col-md-4">
+          			<h6 id="user6"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email6"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete6"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="user7div">
+          		<div class="col-md-4">
+          			<h6 id="user7"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email7"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete7"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="user8div">
+          		<div class="col-md-4">
+          			<h6 id="user8"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email8"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete8"></a></h6>
+          		</div>          	
+          	</div>
+          	
+          	<div id="user9div">
+          		<div class="col-md-4">
+          			<h6 id="user9"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email9"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete9"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="user10div">
+          		<div class="col-md-4">
+          			<h6 id="user10"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6 id="email10"></h6>
+          		</div>
+          		<div class="col-md-4">
+          			<h6><a id="delete10"></a></h6>
+          		</div>
+          	</div>
+
+
+          <nav>
+          	<div id="pager_records"></div>
+          	<div id="page"></div>	          
+          </nav>
+        
+        </div>
+
+        <div ng-show="publishBDEContent">
+          <div>
+            <form id="Uploadform" class="form-admin" enctype="multipart/form-data" action="../php/uploadBde.php" method="post" name="Uploadform" onsubmit="return CheckUpload();">
+              <input id ="name" name="name" type="text" placeholder="Name">
+              <input id="price" name="price" type="text" placeholder="Price">
+              <select id="type" name="type" class="form-control">
+                <option>Clothes</option>
+                <option>Appliances</option>
+                <option>Furnitures</option>
+                <option>Residences</option>
+              </select>
+              <textarea id="description" name="description" rows="5" placeholder="The description of your produit..."></textarea>
+              <div>
+                <input name="upfile" type="file" id="file"/>
+                <p>upload type:'.jpg/.jpeg/.png/.pjpeg/.gif/.bmp/.x-png'</p>
+              </div>
+              <button id="upload" name="submit" class="btn btn-primary" type="submit" value="submit" >Publish</button>     
+            </form>
+          </div> 
+          
+        </div>
+        
+        <div ng-show="quantityContent">
+
+        	<div id="produit1_bound">
+        		<div class="col-md-3">
+        			<h6 id="produit1_name"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit1_quantity"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit1_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+                   	<h6><a id="produit1_all_records"></a></h6>
+          		</div>
+          	</div>
+          	
+        	<div id="produit2_bound">
+        		<div class="col-md-3">
+        			<h6 id="produit2_name"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit2_quantity"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit2_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit2_all_records"></a></h6>
+          		</div>
+          	</div>
+
+        	<div id="produit3_bound">
+        		<div class="col-md-3">
+        			<h6 id="produit3_name"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit3_quantity"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit3_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit3_all_records"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="produit4_bound">
+        		<div class="col-md-3">
+        			<h6 id="produit4_name"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit4_quantity"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit4_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit4_all_records"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="produit5_bound">
+        		<div class="col-md-3">
+        			<h6 id="produit5_name"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit5_quantity"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit5_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit5_all_records"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="produit6_bound">
+        		<div class="col-md-3">
+        			<h6 id="produit6_name"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit6_quantity"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit6_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit6_all_records"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="produit7_bound">
+        		<div class="col-md-3">
+        			<h6 id="produit7_name"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit7_quantity"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit7_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit7_all_records"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="produit8_bound">
+        		<div class="col-md-3">
+        			<h6 id="produit8_name"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit8_quantity"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit8_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit8_all_records"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="produit9_bound">
+        		<div class="col-md-3">
+        			<h6 id="produit9_name"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit9_quantity"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit9_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit9_all_records"></a></h6>
+          		</div>
+          	</div>
+          	
+          	<div id="produit10_bound">
+        		<div class="col-md-3">
+        			<h6 id="produit10_name"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit10_quantity"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6 id="produit10_amount"></h6>
+          		</div>
+          		<div class="col-md-3">
+          			<h6><a id="produit10_all_records"></a></h6>
+          		</div>
+          	</div>
+        	
+          	<nav>
+          	<div id="pager_records_quantity"></div>
+          	<div id="page_quantity"></div>	          
+            </nav>          	          	       	        
+        </div>
+      </div>
+
+
+    </div>
+
+
+</div>
+    <hr style="border:1px solid black;" />
+    
+    <footer>
+      <div>      
+        <span>copyright &copy;2016 <b><a href="http://www.telecom-st-etienne.fr/">TELECOM SAINT-ETIENNE</a></b>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All rights reserved.</span>
+      </div>
+    </footer>
+
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.js"></script>
+    
+    <script>	
+	function user_delete(id){
+  	  var xmlhttp;
+	  if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	  else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	  xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+		  alert("you have deleted this user.");
+
+		  location.href='../php/admin.php';   	    
+	    }
+	  }
+	xmlhttp.open("GET","../php/delete_user.php?id="+id,true);
+	xmlhttp.send(); 
+	}
+	$(document).ready(function(){
+    	$('#user1div').hover(function(){
+    		$('#user1div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user1div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user2div').hover(function(){
+    		$('#user2div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user2div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user3div').hover(function(){
+    		$('#user3div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user3div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user4div').hover(function(){
+    		$('#user4div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user4div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user5div').hover(function(){
+    		$('#user5div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user5div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user6div').hover(function(){
+    		$('#user6div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user6div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user7div').hover(function(){
+    		$('#user7div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user7div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user8div').hover(function(){
+    		$('#user8div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user8div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user9div').hover(function(){
+    		$('#user9div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user9div').css("background-color","#F5F5F5");
+
+    	});
+    	$('#user10div').hover(function(){
+    		$('#user10div').css("background-color","#FFFFFF");
+
+    	},
+    	function(){
+    		$('#user10div').css("background-color","#F5F5F5");
+
+    	});
+    	
+	});
+	</script>
+	<script>	
+	function allrecords(name){
+		alert("aaa");
+  	  var xmlhttp;
+	  if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	  else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	  xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+		  alert("you have deleted this user.");
+
+		  location.href='../php/admin.php';   	    
+	    }
+	  }
+	xmlhttp.open("GET","../php/allrecords.php?name="+name,true);
+	xmlhttp.send(); 
+	}
+	</script>
+
+	</body>
+</html>

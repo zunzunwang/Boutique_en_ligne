@@ -157,10 +157,6 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	if($result_comment){
 		while($row=mysql_fetch_array($result_comment)){
 			//在此填充每个单
-// 			$content=codetohtm($row[comment_description]);
-// 			echo $content;
-		
-				
 			$div_name ="comment$index";
 			?>
 			<script>$('<?php echo "#".$div_name ?>').attr('class',"well well-lg")</script>

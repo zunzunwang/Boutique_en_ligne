@@ -16,7 +16,6 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	 * gestion_admin
 	 */
 	if($_COOKIE['cookie']=="admin"){
-		//$gestioin_admin="<a class=\"page-scroll\" href=\"../php/admin.php\">admin</a>";
 		$gestioin_admin="<a>ADMIN</a>";
 		echo "<script language=\"javascript\">document.getElementById(\"gestion_admin\").innerHTML=\"$gestioin_admin\";</script>";
 		?>
@@ -74,7 +73,6 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	
 		//开始分页导航条代码：
 		$pagenav = "Page $page, Display <B>" . ($totle ? ($firstcount +1) : 0) . "</B>-<B>" . min($firstcount + $displaypg, $totle) . "</B> records, Total $totle records. ";
-//		echo "<script language=\"javascript\">document.getElementById(\"pager_records\").innerHTML=\"$pagenav\";</script>";
 		//如果只有一页则跳出函数：
 		if ($lastpg <= 1)
 			return false;
@@ -110,8 +108,7 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 	//调用pageft()，每页显示12条信息（使用默认的20时，可以省略此参数），使用本页URL（默认，所以省略掉）。
 	_PAGEFT($total,12);
 	
-//	echo $pagenav;
-//	echo "<script language=\"javascript\">document.getElementById(\"pager_records\").innerHTML=\"$pagenav\";</script>";
+
 	//  用于显示填充的部分	
 	$result=mysql_query("SELECT * FROM `Bde_produit_list` limit $firstcount,$displaypg ");
 	$index=1;
@@ -141,27 +138,13 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		 $length=strlen($row[description]);
 		 if($row[description]){
 		 	$str=$row[description];
-		 	//if(strlen($str)>30){
-		 	//$description=substr($str,0,120);
-		 	//$description.="...";
-		 	//}else{
-		 		$description=$row[description];
- 		 		//$num=120-strlen($str);
- 		 		//for($x=0;$x<$num;$x++){
- 		 			//$description.="&nbsp";
- 		 			//$description.="a";		 			
- 		 		//}
- 		 //	echo $produit_description;		 	
-		 //	echo "<script language=\"javascript\">document.getElementById(\"$produit_description\").innerHTML=\"$row[description]\";</script>";
+		 	$description=$row[description];
 		 	echo "<script language=\"javascript\">document.getElementById(\"$produit_description\").innerHTML=\"$description\";</script>";
-		 	
-		// }
 		 }
 		 else{
 		 	echo "<script language=\"javascript\">document.getElementById(\"$produit_description\").innerHTML=\"$description\";</script>";
 		 }
 		 $produit_image=$div_name."_image";
-		 // $image_size = getimagesize($row[img]);
 		 ?>
 		 <script>
 		 $('<?php echo "#".$produit_image; ?>').attr('src',"<?php echo "..\/upload_img\/".$row[img]?>");
@@ -171,6 +154,7 @@ if($_COOKIE['cookie']==null||$_COOKIE['cookie']=="out"){
 		 <?php
 		 
 		 $index += 1;
+		 
 	}
 	
 }
