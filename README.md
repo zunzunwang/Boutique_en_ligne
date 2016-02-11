@@ -1,4 +1,5 @@
-# projet_php
+# Projet recherche & innovation
+<h1>Boutique en ligne</h1>
 
 Nous avons décidé avant pour notre projet de faire une boutique en ligne pour la vente des produits TSE.
 
