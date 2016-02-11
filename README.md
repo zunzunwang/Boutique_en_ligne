@@ -1,15 +1,5 @@
-# Projet recherche & innovation
-<h1>Boutique en ligne</h1>
-
-Nous avons décidé avant pour notre projet de faire une boutique en ligne pour la vente des produits TSE.
-
-Notre projet va donc realiser les fonctions suivantes :
-
-1.Boutique en ligne. (La vente des produits TSE.)
-
-2.La marché aux Puces. (Les étudiants de TSE peuvent publier les informations de leurs articles d’occasion en ligne.)
-
-3.Publier les information des chambres/logements en ligne.
+<h3>Projet recherche & innovation Boutique en ligne</h3>
+<p>This is my project in the third year at Telecom Saint-Etienne (Project Recherche Innovation & project Architecture N-tiers). It was completed by two students within four months and integrates with Responsive Web Design and Semantic Web.</p>
 
 <h3>Technologies and frameworks used</h3>
 <table style="width:100%">
